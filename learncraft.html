@@ -5,6 +5,76 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+      /* Hover Image Overlay */
+      .hover-box {
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.6s ease;
+      }
+      .hover-box.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .hover-box img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: all 0.4s ease;
+      }
+      .hover-box .overlay-text {
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.85);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        padding: 1em;
+        font-size: 1.2em;
+      }
+      .hover-box:hover img {
+        opacity: 0;
+        transform: scale(1.1);
+        filter: blur(2px);
+      }
+      .hover-box:hover .overlay-text {
+        opacity: 1;
+      }
+
+      /* Typewriter Title */
+      .typewriter h1 {
+        overflow: hidden;
+        border-right: .15em solid orange;
+        white-space: nowrap;
+        margin: 0 auto;
+        animation: typing 3s steps(30, end), blink-caret .75s step-end infinite;
+      }
+      @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+      }
+      @keyframes blink-caret {
+        from, to { border-color: transparent }
+        50% { border-color: orange; }
+      }
+
+      /* Dark Mode */
+      body.dark-mode {
+        background-color: #111;
+        color: #eee;
+      }
+      body.dark-mode .hover-box .overlay-text {
+        background-color: rgba(255,255,255,0.1);
+        color: #fff;
+      }
+    </style>
   </head>
   <body class="is-preload">
     <div id="wrapper">
@@ -15,99 +85,66 @@
         <nav><a href="#menu">Menu</a></nav>
       </header>
 
-				<!-- Menu -->
-					<nav id="menu">
-						<ul class="links">
-							<li><a href="index.html">Home</a></li>
-							<li><a href="teamcraft.html">Team Craft</a></li>
-							<li><a href="quizbound.html">Quizbound</a></li>
-							<li><a href="quizroyale.html">Quiz Royale</a></li>
-						</ul>
-					</nav>
+      <!-- Menu -->
+      <nav id="menu">
+        <ul class="links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="teamcraft.html">Team Craft</a></li>
+          <li><a href="quizbound.html">Quizbound</a></li>
+          <li><a href="quizroyale.html">Quiz Royale</a></li>
+        </ul>
+      </nav>
 
       <!-- Main -->
       <div id="main" class="alt">
-		<section id="one">
-		  <div class="inner">
-			<header class="major">
-			  <h1>Learn Craft</h1>
-			</header>
-			<p>A short description of Learn Craft goes here. You can add details about what it does, who it’s for, and how teachers can use it.</p>
+        <section id="one">
+          <div class="inner">
 
-			<style>
-			  .hover-box {
-				position: relative;
-				overflow: hidden;
-				cursor: pointer;
-			  }
+            <!-- Title -->
+            <header class="major typewriter">
+              <h1>Learn Craft</h1>
+            </header>
 
-			  .hover-box img {
-				width: 100%;
-				height: auto;
-				display: block;
-				transition: opacity 0.4s ease;
-			  }
+            <p>A short description of Learn Craft goes here. You can add details about what it does, who it’s for, and how teachers can use it.</p>
 
-			  .hover-box .overlay-text {
-				position: absolute;
-				top: 0;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				color: white;
-				background-color: rgba(0, 0, 0, 0.85);
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				text-align: center;
-				opacity: 0;
-				transition: opacity 0.4s ease;
-				padding: 1em;
-				font-size: 1.2em;
-			  }
+            <!-- Dark Mode Button -->
+            <button onclick="toggleDarkMode()" class="button small">Toggle Dark Mode</button>
 
-			  .hover-box:hover img {
-				opacity: 0;
-			  }
+            <!-- Image Grid -->
+            <div class="row">
+              <div class="col-6 col-12-small">
+                <div class="hover-box">
+                  <img src="images/learncraft-1.jpg" alt="Learn Craft Screenshot 1" />
+                  <div class="overlay-text">Character and terrain selection</div>
+                </div>
+              </div>
+              <div class="col-6 col-12-small">
+                <div class="hover-box">
+                  <img src="images/learncraft-2.jpg" alt="Learn Craft Screenshot 2" />
+                  <div class="overlay-text">Interact with the environment</div>
+                </div>
+              </div>
+              <div class="col-6 col-12-small">
+                <div class="hover-box">
+                  <img src="images/learncraft-3.jpg" alt="Learn Craft Screenshot 3" />
+                  <div class="overlay-text">Upload text, questions, images, and audio clips</div>
+                </div>
+              </div>
+              <div class="col-6 col-12-small">
+                <div class="hover-box">
+                  <img src="images/learncraft-4.jpg" alt="Learn Craft Screenshot 4" />
+                  <div class="overlay-text">Upload articles and passages</div>
+                </div>
+              </div>
+            </div>
 
-			  .hover-box:hover .overlay-text {
-				opacity: 1;
-			  }
-			</style>
+            <!-- Contact & Download -->
+            <p>If you're interested in using Learn Craft in your classroom, feel free to contact us:</p>
+            <a href="mailto:nextstepedu2017@gmail.com?subject=Learn Craft Inquiry" class="button primary">Email Us</a>
+            <p><a href="files/LearnCraft-Brochure.pdf" class="button icon solid fa-download" target="_blank">Download Brochure</a></p>
 
-			<!-- Image Grid -->
-			<div class="row">
-			  <div class="col-6 col-12-small">
-				<div class="hover-box">
-				  <img src="images/learncraft-1.jpg" alt="Learn Craft Screenshot 1" />
-				  <div class="overlay-text">Character and terrain selection</div>
-				</div>
-			  </div>
-			  <div class="col-6 col-12-small">
-				<div class="hover-box">
-				  <img src="images/learncraft-2.jpg" alt="Learn Craft Screenshot 2" />
-				  <div class="overlay-text">Interact with the environment</div>
-				</div>
-			  </div>
-			  <div class="col-6 col-12-small">
-				<div class="hover-box">
-				  <img src="images/learncraft-3.jpg" alt="Learn Craft Screenshot 3" />
-				  <div class="overlay-text">Upload text, questions, images, and audio clips</div>
-				</div>
-			  </div>
-			  <div class="col-6 col-12-small">
-				<div class="hover-box">
-				  <img src="images/learncraft-4.jpg" alt="Learn Craft Screenshot 4" />
-				  <div class="overlay-text">Upload articles and passages</div>
-				</div>
-			  </div>
-			</div>
-
-
-			<p>If you're interested in using Learn Craft in your classroom, feel free to contact us:</p>
-			<a href="mailto:nextstepedu2017@gmail.com?subject=Learn Craft Inquiry" class="button primary">Email Us</a>
-		  </div>
-		</section>
+          </div>
+        </section>
       </div>
 
       <!-- Footer -->
@@ -120,12 +157,32 @@
       </footer>
 
     </div>
+
+    <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/jquery.scrollex.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+      function toggleDarkMode() {
+        document.body.classList.toggle("dark-mode");
+      }
+
+      // Scroll animation for .hover-box
+      $(function () {
+        $('.hover-box').scrollex({
+          top: '80%',
+          enter: function () {
+            $(this).addClass('visible');
+          },
+          leave: function () {
+            $(this).removeClass('visible');
+          }
+        });
+      });
+    </script>
   </body>
 </html>
