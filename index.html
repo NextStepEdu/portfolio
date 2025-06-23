@@ -100,24 +100,30 @@
 						<div class="inner">
 							<section>
 								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
-										</div>
-										<div class="field half">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
-										</div>
-										<div class="field">
-											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="6"></textarea>
-										</div>
+								  <div class="fields">
+									<div class="field half">
+									  <label for="name">Name</label>
+									  <input type="text" name="name" id="name" />
 									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
-										<li><input type="reset" value="Clear" /></li>
-									</ul>
+									<div class="field half">
+									  <label for="email">Email</label>
+									  <input type="text" name="email" id="email" />
+									</div>
+									<div class="field">
+									  <label for="message">Message</label>
+									  <textarea name="message" id="message" rows="6"></textarea>
+									</div>
+									<div class="field">
+									  <label>
+										<input type="checkbox" id="humanCheck" />
+										I’m not a robot
+									  </label>
+									</div>
+								  </div>
+								  <ul class="actions">
+									<li><input type="submit" value="Send Message" class="primary" id="submitBtn" disabled /></li>
+									<li><input type="reset" value="Clear" /></li>
+								  </ul>
 								</form>
 							</section>
 							<section class="split">
@@ -158,6 +164,15 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+			<script>
+			  const checkbox = document.getElementById('humanCheck');
+			  const submitBtn = document.getElementById('submitBtn');
+
+			  checkbox.addEventListener('change', function () {
+				submitBtn.disabled = !this.checked;
+			  });
+			</script>
 
 	</body>
 </html>
