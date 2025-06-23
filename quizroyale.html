@@ -25,30 +25,86 @@
 						</ul>
 					</nav>
 
-	  <!-- Main -->
+      <!-- Main -->
       <div id="main" class="alt">
 		<section id="one">
 		  <div class="inner">
 			<header class="major">
-              <h1>Quiz Royale</h1>
+			  <h1>Learn Craft</h1>
 			</header>
-            <p>A short description of Quiz Royale goes here. You can add details about what it does, who it’s for, and how teachers can use it.</p>
+			<p>A short description of Learn Craft goes here. You can add details about what it does, who it’s for, and how teachers can use it.</p>
 
-			<!-- Single Image -->
-			<img src="images/learncraft-main.jpg" alt="Learn Craft Overview" style="max-width: 100%; height: auto; margin: 2em 0;" />
+			<style>
+			  .hover-box {
+				position: relative;
+				overflow: hidden;
+				cursor: pointer;
+			  }
+
+			  .hover-box img {
+				width: 100%;
+				height: auto;
+				display: block;
+				transition: opacity 0.4s ease;
+			  }
+
+			  .hover-box .overlay-text {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				color: white;
+				background-color: rgba(0, 0, 0, 0.85);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				text-align: center;
+				opacity: 0;
+				transition: opacity 0.4s ease;
+				padding: 1em;
+				font-size: 1.2em;
+			  }
+
+			  .hover-box:hover img {
+				opacity: 0;
+			  }
+
+			  .hover-box:hover .overlay-text {
+				opacity: 1;
+			  }
+			</style>
 
 			<!-- Image Grid -->
 			<div class="row">
 			  <div class="col-6 col-12-small">
-				<span class="image fit"><img src="images/learncraft-1.jpg" alt="Learn Craft Activity Screenshot" /></span>
+				<div class="hover-box">
+				  <img src="images/quizroyale-1.jpg" alt="Quiz Royale Screenshot 1" />
+				  <div class="overlay-text">Vocabulary Matching Game</div>
+				</div>
 			  </div>
 			  <div class="col-6 col-12-small">
-				<span class="image fit"><img src="images/learncraft-2.jpg" alt="Learn Craft Game Screenshot" /></span>
+				<div class="hover-box">
+				  <img src="images/quizroyale-2.jpg" alt="Quiz Royale Screenshot 2" />
+				  <div class="overlay-text">Grammar Puzzle Challenge</div>
+				</div>
+			  </div>
+			  <div class="col-6 col-12-small">
+				<div class="hover-box">
+				  <img src="images/quizroyale-3.jpg" alt="Quiz Royale Screenshot 3" />
+				  <div class="overlay-text">Team Activity Mode</div>
+				</div>
+			  </div>
+			  <div class="col-6 col-12-small">
+				<div class="hover-box">
+				  <img src="images/quizroyale-4.jpg" alt="Quiz Royale Screenshot 4" />
+				  <div class="overlay-text">Sentence Builder Game</div>
+				</div>
 			  </div>
 			</div>
 
             <p>If you're interested in using Quiz Royale in your classroom, feel free to contact us:</p>
-			<a href="mailto:nextstepedu2017@gmail.com?subject=Learn Craft Inquiry" class="button primary">Email Us</a>
+			<a href="mailto:nextstepedu2017@gmail.com?subject=Quiz Royale Inquiry" class="button primary">Email Us</a>
 		  </div>
 		</section>
       </div>
