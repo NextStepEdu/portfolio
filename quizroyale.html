@@ -78,6 +78,39 @@
       body.light-mode .button {
         color: #222;
       }
+	  
+      /* FAQ Accordion */
+      .faq-section {
+        margin-top: 3em;
+        border-top: 1px solid #ddd;
+        padding-top: 2em;
+      }
+      .faq-item {
+        margin-bottom: 1em;
+      }
+      .faq-question {
+        width: 100%;
+        background: #f0f0f0;
+        color: #333;
+        padding: 1em;
+        font-size: 1em;
+        border: none;
+        border-radius: 6px;
+        text-align: left;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+      .faq-question:hover {
+        background: #e0e0e0;
+      }
+      .faq-answer {
+        display: none;
+        padding: 1em;
+        background: #fdfdfd;
+        border-left: 4px solid #007acc;
+        border-radius: 4px;
+        margin-top: 0.3em;
+      }
     </style>
   </head>
   <body class="is-preload">
@@ -119,25 +152,25 @@
               <div class="col-6 col-12-small">
                 <div class="hover-box">
                   <img src="images/quizroyale-1.jpg" alt="Quiz Royale Screenshot 1" />
-                  <div class="overlay-text">Character and terrain selection</div>
+                  <div class="overlay-text">Select your hero</div>
                 </div>
               </div>
               <div class="col-6 col-12-small">
                 <div class="hover-box">
                   <img src="images/quizroyale-2.jpg" alt="Quiz Royale Screenshot 2" />
-                  <div class="overlay-text">Interact with the environment</div>
+                  <div class="overlay-text">Team up to beat the monsters</div>
                 </div>
               </div>
               <div class="col-6 col-12-small">
                 <div class="hover-box">
                   <img src="images/quizroyale-3.jpg" alt="Quiz Royale Screenshot 3" />
-                  <div class="overlay-text">Upload text, questions, images, and audio clips</div>
+                  <div class="overlay-text">Collect and use items from your inventory</div>
                 </div>
               </div>
               <div class="col-6 col-12-small">
                 <div class="hover-box">
                   <img src="images/quizroyale-4.jpg" alt="Quiz Royale Screenshot 4" />
-                  <div class="overlay-text">Upload articles and passages</div>
+                  <div class="overlay-text">Answers questions to unlock areas and level-up</div>
                 </div>
               </div>
             </div>
@@ -145,6 +178,27 @@
             <p>Download the brochure for more details. If you're interested in using Quiz Royale in your classroom, feel free to contact us:</p>
             <a href="mailto:nextstepedu2017@gmail.com?subject=Quiz Royale Inquiry" class="button primary">Email Us</a>
             <p><a href="files/QuizRoyale-Brochure.pdf" class="button icon solid fa-download" target="_blank">Download Brochure</a></p>
+
+			<!-- FAQ Section -->
+            <div class="faq-section">
+              <h2>Frequently Asked Questions</h2>
+              <div class="faq-item">
+                <button class="faq-question">What is Quiz Royale?</button>
+                <div class="faq-answer">Quiz Royale is an interactive desktop app designed for make exam preparation fun. Teachers upload content, and students answer questions through a game-like experience.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">Do I need an internet connection?</button>
+                <div class="faq-answer">Yes. You will need a stable internet connection.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">Can I use it with multiple students?</button>
+                <div class="faq-answer">Yes! It’s made for up to three students, with group modes and individual practice activities.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">What devices are supported?</button>
+                <div class="faq-answer">It’s a desktop app for Windows and Mac. Touchscreen support is also included.</div>
+              </div>
+            </div>
 
           </div>
         </section>
@@ -183,6 +237,17 @@
           leave: function () {
             $(this).removeClass('visible');
           }
+        });
+      });
+
+      // FAQ toggle
+      document.querySelectorAll('.faq-question').forEach(button => {
+        button.addEventListener('click', () => {
+          const answer = button.nextElementSibling;
+          document.querySelectorAll('.faq-answer').forEach(a => {
+            if (a !== answer) a.style.display = 'none';
+          });
+          answer.style.display = (answer.style.display === 'block') ? 'none' : 'block';
         });
       });
     </script>
