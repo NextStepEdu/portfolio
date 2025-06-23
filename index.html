@@ -11,6 +11,41 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+		  /* FAQ Accordion */
+		  .faq-section {
+			margin-top: 3em;
+			border-top: 1px solid #ddd;
+			padding-top: 2em;
+		  }
+		  .faq-item {
+			margin-bottom: 1em;
+		  }
+		  .faq-question {
+			width: 100%;
+			background: #f0f0f0;
+			color: #333;
+			padding: 1em;
+			font-size: 1em;
+			border: none;
+			border-radius: 6px;
+			text-align: left;
+			cursor: pointer;
+			transition: background 0.3s ease;
+		  }
+		  .faq-question:hover {
+			background: #e0e0e0;
+		  }
+		  .faq-answer {
+			display: none;
+			padding: 1em;
+			background: #fdfdfd;
+			border-left: 4px solid #007acc;
+			border-radius: 4px;
+			margin-top: 0.3em;
+			color: black;
+		  }
+	    </style>
 	</head>
 	<body class="is-preload">
 
@@ -138,6 +173,55 @@
 						</div>
 					</section>
 
+				<!-- FAQ Section -->
+				<div class="faq-section">
+				  <h2>Frequently Asked Questions</h2>
+				  <div class="faq-item">
+					<button class="faq-question">What is Quiz Royale?</button>
+					<div class="faq-answer">Quiz Royale is an interactive desktop app designed for make exam preparation fun. Teachers upload content, and students answer questions through a game-like experience.</div>
+				  </div>
+				  <div class="faq-item">
+					<button class="faq-question">Do I need an internet connection?</button>
+					<div class="faq-answer">Yes. You will need a stable internet connection.</div>
+				  </div>
+				  <div class="faq-item">
+					<button class="faq-question">Can I use it with multiple students?</button>
+					<div class="faq-answer">Yes! It’s made for up to three students, with group modes and individual practice activities.</div>
+				  </div>
+				  <div class="faq-item">
+					<button class="faq-question">What devices are supported?</button>
+					<div class="faq-answer">It’s a desktop app for Windows and Mac. Touchscreen support is also included.</div>
+				  </div>
+				  <div class="faq-item">
+					<button class="faq-question">Who is Quiz Royale for?</button>
+					<div class="faq-answer">Quiz Royale is for teachers with their own clientele base.</div>
+				  </div>
+					<div class="faq-item">
+					<button class="faq-question">Are materials / clients provided?</button>
+					<div class="faq-answer">No. Materials are created by the user (teacher) and clients are based on the teacher’s existing clientele base.</div>
+				  </div>
+					<div class="faq-item">
+					<button class="faq-question">Is there a lesson time limit?</button>
+					<div class="faq-answer">Yes. Quiz Royale lessons last for 35 minutes.</div>
+				  </div>
+					<div class="faq-item">
+					<button class="faq-question">Are there any discounts / specials?</button>
+					<div class="faq-answer">If you purchase more than one product, a discount will be discussed.</div>
+				  </div>
+					<div class="faq-item">
+					<button class="faq-question">How are accounts created?</button>
+					<div class="faq-answer">Users purchase a tier and are provided with a login and password.</div>
+				  </div>
+					<div class="faq-item">
+					<button class="faq-question">What tiers are available?</button>
+					<div class="faq-answer">There are three tiers. The lower tier has fewer login attempts while highest tier has more.</div>
+				  </div>
+					<div class="faq-item">
+					<button class="faq-question">What are the prices for each tier?</button>
+					<div class="faq-answer">Contact us for more information, and we’ll gladly discuss it further.</div>
+				  </div>
+				</div>
+
 				<!-- Footer -->
 					<footer id="footer">
 						<div class="inner">
@@ -171,6 +255,17 @@
 
 			  checkbox.addEventListener('change', function () {
 				submitBtn.disabled = !this.checked;
+			  });
+			  
+			  // FAQ toggle
+			  document.querySelectorAll('.faq-question').forEach(button => {
+				button.addEventListener('click', () => {
+				  const answer = button.nextElementSibling;
+				  document.querySelectorAll('.faq-answer').forEach(a => {
+					if (a !== answer) a.style.display = 'none';
+				  });
+				  answer.style.display = (answer.style.display === 'block') ? 'none' : 'block';
+				});
 			  });
 			</script>
 
