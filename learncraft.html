@@ -65,14 +65,18 @@
         50% { border-color: orange; }
       }
 
-      /* Dark Mode */
-      body.dark-mode {
-        background-color: #111;
-        color: #eee;
+      /* Light Mode */
+      body.light-mode {
+        background-color: #ffffff;
+        color: #222;
       }
-      body.dark-mode .hover-box .overlay-text {
-        background-color: rgba(255,255,255,0.1);
-        color: #fff;
+      body.light-mode .hover-box .overlay-text {
+        background-color: rgba(0, 0, 0, 0.75);
+        color: white;
+      }
+      body.light-mode a,
+      body.light-mode .button {
+        color: #222;
       }
     </style>
   </head>
@@ -107,8 +111,8 @@
 
             <p>A short description of Learn Craft goes here. You can add details about what it does, who it’s for, and how teachers can use it.</p>
 
-            <!-- Dark Mode Button -->
-            <button onclick="toggleDarkMode()" class="button small">Toggle Dark Mode</button>
+            <!-- Light Mode Button -->
+            <button onclick="toggleLightMode()" class="button small">Toggle Light Mode</button>
 
             <!-- Image Grid -->
             <div class="row">
@@ -138,7 +142,6 @@
               </div>
             </div>
 
-            <!-- Contact & Download -->
             <p>If you're interested in using Learn Craft in your classroom, feel free to contact us:</p>
             <a href="mailto:nextstepedu2017@gmail.com?subject=Learn Craft Inquiry" class="button primary">Email Us</a>
             <p><a href="files/LearnCraft-Brochure.pdf" class="button icon solid fa-download" target="_blank">Download Brochure</a></p>
@@ -155,7 +158,6 @@
           </ul>
         </div>
       </footer>
-
     </div>
 
     <!-- Scripts -->
@@ -167,8 +169,8 @@
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
     <script>
-      function toggleDarkMode() {
-        document.body.classList.toggle("dark-mode");
+      function toggleLightMode() {
+        document.body.classList.toggle("light-mode");
       }
 
       // Scroll animation for .hover-box
