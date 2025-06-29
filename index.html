@@ -90,13 +90,44 @@
 			}
 			.cookie-notice button:hover {
 			  background: #005fa3;
-			}			
+			}	
+
+			/* Logo Styling */
+			.logo-image {
+			  max-width: 200px;
+			  display: block;
+			  margin: 1em auto;
+			  filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.5));
+			  transition: transform 0.3s ease;
+			}
+
+			.logo-image:hover {
+			  transform: scale(1.05) rotate(2deg);
+			}
+
+			/* 3D Text Effect for Titles */
+			h1, h2, h3 {
+			  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+			}
+
+			.site-title {
+			  text-align: center;
+			  margin-top: 0.5em;
+			  font-size: 2.5em;
+			  color: #ffffff;
+			}
 	    </style>
 	</head>
 	<body class="is-preload">
 
 		<!-- Wrapper -->
 			<div id="wrapper">
+
+				<!-- Logo and 3D Site Title -->
+				<div class="site-header">
+				  <img src="images/logo.png" alt="Next Step Edu Logo" class="logo-image" />
+				  <h1 class="site-title">Next Step Edu</h1>
+				</div>
 
 				<!-- Header -->
 					<header id="header" class="alt">
