@@ -1,166 +1,183 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>Forty by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<style>
-			/* FAQ Accordion - Improved */
-			.faq-section {
-			  margin-top: 3em;
-			  padding: 0 1em;
-			  max-width: 800px;
-			  margin-left: auto;
-			  margin-right: auto;
-			}
+<head>
+	<title>Forty by HTML5 UP</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	<style>
+    /* Full-Page Static Logo Background (Watermark) */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('images/logo.png'); /* Update path if needed */
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain; /* Or 'cover' if you prefer full cover */
+      opacity: 0.07; /* Adjust opacity for visibility */
+      z-index: -1;
+      pointer-events: none;
+    }
 
-			.faq-item {
-			  margin-bottom: 1.5em;
-			  word-wrap: break-word;
-			}
+	/* FAQ Accordion - Improved */
+	.faq-section {
+	  margin-top: 3em;
+	  padding: 0 1em;
+	  max-width: 800px;
+	  margin-left: auto;
+	  margin-right: auto;
+	}
 
-			.faq-question {
-			  width: 100%;
-			  background: #f0f0f0;
-			  color: #333;
-			  padding: 1em;
-			  font-size: 1em;
-			  border: none;
-			  border-radius: 6px;
-			  text-align: left;
-			  cursor: pointer;
-			  transition: background 0.3s ease;
-			  word-wrap: break-word;
-			  white-space: normal;
-			  line-height: 1.5;
-			}
+	.faq-item {
+	  margin-bottom: 1.5em;
+	  word-wrap: break-word;
+	}
 
-			.faq-question:hover {
-			  background: #e0e0e0;
-			}
+	.faq-question {
+	  width: 100%;
+	  background: #f0f0f0;
+	  color: #333;
+	  padding: 1em;
+	  font-size: 1em;
+	  border: none;
+	  border-radius: 6px;
+	  text-align: left;
+	  cursor: pointer;
+	  transition: background 0.3s ease;
+	  word-wrap: break-word;
+	  white-space: normal;
+	  line-height: 1.5;
+	}
 
-			.faq-answer {
-			  max-height: 0;
-			  overflow: hidden;
-			  opacity: 0;
-			  transition: all 0.4s ease;
-			  padding: 0 1em;
-			  background: #fdfdfd;
-			  border-left: 4px solid #007acc;
-			  border-radius: 4px;
-			  margin-top: 0.3em;
-			  color: black;
-			}
-			.faq-answer.open {
-			  max-height: 500px; /* high enough to fit most answers */
-			  opacity: 1;
-			  padding: 1em;
-			}
-			
-			/* Cookie Info Banner */
-			.cookie-notice {
-			  position: fixed;
-			  bottom: 20px;
-			  left: 20px;
-			  right: 20px;
-			  max-width: 400px;
-			  margin: auto;
-			  background: #333;
-			  color: #fff;
-			  padding: 1em;
-			  border-radius: 6px;
-			  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-			  font-size: 0.9em;
-			  z-index: 9999;
-			  display: none;
-			}
-			.cookie-notice p {
-			  margin: 0 0 0.5em 0;
-			}
-			.cookie-notice button {
-			  background: #007acc;
-			  color: #fff;
-			  border: none;
-			  padding: 0.5em 1em;
-			  border-radius: 4px;
-			  cursor: pointer;
-			  font-size: 0.85em;
-			}
-			.cookie-notice button:hover {
-			  background: #005fa3;
-			}	
+	.faq-question:hover {
+	  background: #e0e0e0;
+	}
 
-			/* Logo Styling */
-			.logo-image {
-			  max-width: 200px;
-			  display: block;
-			  margin: 1em auto;
-			  filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.5));
-			  transition: transform 0.3s ease;
-			}
+	.faq-answer {
+	  max-height: 0;
+	  overflow: hidden;
+	  opacity: 0;
+	  transition: all 0.4s ease;
+	  padding: 0 1em;
+	  background: #fdfdfd;
+	  border-left: 4px solid #007acc;
+	  border-radius: 4px;
+	  margin-top: 0.3em;
+	  color: black;
+	}
+	.faq-answer.open {
+	  max-height: 500px; /* high enough to fit most answers */
+	  opacity: 1;
+	  padding: 1em;
+	}
+	
+	/* Cookie Info Banner */
+	.cookie-notice {
+	  position: fixed;
+	  bottom: 20px;
+	  left: 20px;
+	  right: 20px;
+	  max-width: 400px;
+	  margin: auto;
+	  background: #333;
+	  color: #fff;
+	  padding: 1em;
+	  border-radius: 6px;
+	  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+	  font-size: 0.9em;
+	  z-index: 9999;
+	  display: none;
+	}
+	.cookie-notice p {
+	  margin: 0 0 0.5em 0;
+	}
+	.cookie-notice button {
+	  background: #007acc;
+	  color: #fff;
+	  border: none;
+	  padding: 0.5em 1em;
+	  border-radius: 4px;
+	  cursor: pointer;
+	  font-size: 0.85em;
+	}
+	.cookie-notice button:hover {
+	  background: #005fa3;
+	}	
 
-			.logo-image:hover {
-			  transform: scale(1.1) rotate(2deg);
-			}
+	/* Logo Styling */
+	.logo-image {
+	  max-width: 200px;
+	  display: block;
+	  margin: 1em auto;
+	  filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.5));
+	  transition: transform 0.3s ease;
+	}
 
-			/* 3D Text Effect for Titles */
-			h1, h2, h3 {
-			  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
-			}
+	.logo-image:hover {
+	  transform: scale(1.1) rotate(2deg);
+	}
 
-			.site-title {
-			  text-align: center;
-			  margin-top: 0.5em;
-			  font-size: 2.5em;
-			  color: #ffffff;
-			}
-			
-			/* Background Logo (Watermark-style) */
-			.logo-background {
-			  position: relative;
-			  width: 100%;
-			  height: 300px; /* Adjust height as needed */
-			  overflow: hidden;
-			}
+	/* 3D Text Effect for Titles */
+	h1, h2, h3 {
+	  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+	}
 
-			.logo-background .logo-image {
-			  position: absolute;
-			  top: 50%;
-			  left: 50%;
-			  transform: translate(-50%, -50%);
-			  width: 500px; /* Make it big */
-			  opacity: 0.1; /* Faint watermark effect */
-			  z-index: 1;
-			}
-			
-			.parallax-band {
-			  position: relative;
-			  z-index: 2;
-			  overflow: hidden;
-			  background-repeat: repeat-x;
-			  background-position: 0 center;
-			  background-size: auto 100%;
-			  height: 200px;
-			  display: flex;
-			  align-items: center;
-			  justify-content: center;
-			  text-align: center;
-			  color: white;
-			}
+	.site-title {
+	  text-align: center;
+	  margin-top: 0.5em;
+	  font-size: 2.5em;
+	  color: #ffffff;
+	}
+	
+	/* Background Logo (Watermark-style) */
+	.logo-background {
+	  position: relative;
+	  width: 100%;
+	  height: 300px; /* Adjust height as needed */
+	  overflow: hidden;
+	}
 
-			.parallax-band .parallax-content {
-			  position: relative;
-			  z-index: 2;
-			  background: rgba(0,0,0,0.5);
-			  padding: 1em 2em;
-			  border-radius: 8px;
-			  color: white;
-			}
-	    </style>
-	</head>
-	<body class="is-preload">
+	.logo-background .logo-image {
+	  position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  transform: translate(-50%, -50%);
+	  width: 500px; /* Make it big */
+	  opacity: 0.1; /* Faint watermark effect */
+	  z-index: 1;
+	}
+	
+	.parallax-band {
+	  position: relative;
+	  z-index: 2;
+	  overflow: hidden;
+	  background-repeat: repeat-x;
+	  background-position: 0 center;
+	  background-size: auto 100%;
+	  height: 200px;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  text-align: center;
+	  color: white;
+	}
+
+	.parallax-band .parallax-content {
+	  position: relative;
+	  z-index: 2;
+	  background: rgba(0,0,0,0.5);
+	  padding: 1em 2em;
+	  border-radius: 8px;
+	  color: white;
+	}
+	</style>
+</head>
+<body class="is-preload">
 
 		<!-- Wrapper -->
 			<div id="wrapper">
