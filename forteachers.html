@@ -21,93 +21,8 @@
       background-size: contain; /* Or 'cover' if you prefer full cover */
       opacity: 0.07; /* Adjust opacity for visibility */
       z-index: -1;
-      pointer-events: none;  
+      pointer-events: none;
     }
-		/* Light Mode */
-	body.light-mode {
-	background-color: #ffffff;
-	color: #222;
-	}
-
-	/* Smooth transition for all theme changes */
-	body, h1, h2, h3, p, .faq-question, .faq-answer, footer, .inner, section, .button, a, .app-description, .typewriter h1 {
-	  transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
-	}
-
-		/* Light Mode Overrides */
-	body.light-mode {
-	  background-color: #ffffff;
-	  color: #222;
-	}
-
-	body.light-mode h1,
-	body.light-mode h2,
-	body.light-mode h3,
-	body.light-mode p,
-	body.light-mode .app-description,
-	body.light-mode .typewriter h1 {
-	  color: #222;
-	}
-
-	body.light-mode h1,
-	body.light-mode h2,
-	body.light-mode h3 {
-	  text-shadow: 0 1px 1px rgba(0,0,0,0.05);
-	}
-
-	body.light-mode a,
-	body.light-mode .button {
-	  color: #222;
-	}
-
-	body.light-mode #main,
-	body.light-mode .inner,
-	body.light-mode section {
-	  background-color: #fff;
-	}
-
-	body.light-mode .faq-question {
-	  background: #eaeaea;
-	  color: #222;
-	}
-
-	body.light-mode .faq-answer {
-	  background: #fdfdfd;
-	  color: #222;
-	  border-left-color: #007acc;
-	}
-
-	body.light-mode footer {
-	  background: #f0f0f0;
-	  color: #222;
-	}
-
-	body.light-mode footer a {
-	  color: #007acc;
-	}
-
-	body.light-mode .typewriter h1 {
-	  border-right-color: orange;
-	}
-
-	body.light-mode .hover-box .overlay-text {
-	background-color: rgba(0, 0, 0, 0.75);
-	color: white;
-	}
-
-	body.light-mode footer li,
-	body.light-mode footer ul,
-	body.light-mode .copyright,
-	body.light-mode .app-description strong {
-	  color: #222;
-	}
-
-	body.light-mode nav,
-	body.light-mode #menu,
-	body.light-mode #menu ul.links li a {
-	  background-color: #fff;
-	  color: #222;
-	}
 	</style>
 	</head>
 	<body class="is-preload">
@@ -146,9 +61,6 @@
 							</div>
 						</div>
 					</section>
-
-            <!-- Light Mode Button -->
-            <button onclick="toggleLightMode()" class="button small">Toggle Light Mode</button>
 
 				<!-- Main -->
 					<div id="main">
@@ -214,9 +126,6 @@
 			<script src="assets/js/main.js"></script>
 
 			<script>
-			function toggleLightMode() {
-			document.body.classList.toggle("light-mode");
-			}
 			</script>
 
 	</body>
