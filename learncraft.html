@@ -6,202 +6,218 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <style>
-		/* Hover Image Overlay */
-		.hover-box {
-		position: relative;
-		overflow: hidden;
-		cursor: pointer;
-		opacity: 0;
-		transform: translateY(20px);
-		transition: all 0.6s ease;
-		}
-		.hover-box.visible {
-		opacity: 1;
-		transform: translateY(0);
-		}
-		.hover-box img {
-		width: 100%;
-		height: auto;
-		display: block;
-		transition: all 0.4s ease;
-		}
-		.hover-box .overlay-text {
-		position: absolute;
-		top: 0; left: 0; right: 0; bottom: 0;
-		color: white;
-		background-color: rgba(0, 0, 0, 0.85);
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		text-align: center;
-		opacity: 0;
-		transition: opacity 0.4s ease;
-		padding: 1em;
-		font-size: 1.2em;
-		}
-		.hover-box:hover img {
-		opacity: 0;
-		transform: scale(1.1);
-		filter: blur(2px);
-		}
-		.hover-box:hover .overlay-text {
-		opacity: 1;
-		}
+    /* Full-Page Static Logo Background (Watermark) */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('images/logo.png'); /* Update path if needed */
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain; /* Or 'cover' if you prefer full cover */
+      opacity: 0.07; /* Adjust opacity for visibility */
+      z-index: -1;
+      pointer-events: none;
+    }		
+	/* Hover Image Overlay */
+	.hover-box {
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+	opacity: 0;
+	transform: translateY(20px);
+	transition: all 0.6s ease;
+	}
+	.hover-box.visible {
+	opacity: 1;
+	transform: translateY(0);
+	}
+	.hover-box img {
+	width: 100%;
+	height: auto;
+	display: block;
+	transition: all 0.4s ease;
+	}
+	.hover-box .overlay-text {
+	position: absolute;
+	top: 0; left: 0; right: 0; bottom: 0;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.85);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	opacity: 0;
+	transition: opacity 0.4s ease;
+	padding: 1em;
+	font-size: 1.2em;
+	}
+	.hover-box:hover img {
+	opacity: 0;
+	transform: scale(1.1);
+	filter: blur(2px);
+	}
+	.hover-box:hover .overlay-text {
+	opacity: 1;
+	}
 
-		/* Typewriter Title */
-		.typewriter h1 {
-		overflow: hidden;
-		border-right: .15em solid orange;
-		white-space: nowrap;
-		margin: 0 auto;
-		animation: typing 3s steps(30, end), blink-caret .75s step-end infinite;
-		}
-		@keyframes typing {
-		from { width: 0 }
-		to { width: 100% }
-		}
-		@keyframes blink-caret {
-		from, to { border-color: transparent }
-		50% { border-color: orange; }
-		}
+	/* Typewriter Title */
+	.typewriter h1 {
+	overflow: hidden;
+	border-right: .15em solid orange;
+	white-space: nowrap;
+	margin: 0 auto;
+	animation: typing 3s steps(30, end), blink-caret .75s step-end infinite;
+	}
+	@keyframes typing {
+	from { width: 0 }
+	to { width: 100% }
+	}
+	@keyframes blink-caret {
+	from, to { border-color: transparent }
+	50% { border-color: orange; }
+	}
 
-		/* Light Mode */
-		body.light-mode {
-		background-color: #ffffff;
-		color: #222;
-		}
+	/* Light Mode */
+	body.light-mode {
+	background-color: #ffffff;
+	color: #222;
+	}
 
-		/* Smooth transition for all theme changes */
-		body, h1, h2, h3, p, .faq-question, .faq-answer, footer, .inner, section, .button, a, .app-description, .typewriter h1 {
-		  transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
-		}
+	/* Smooth transition for all theme changes */
+	body, h1, h2, h3, p, .faq-question, .faq-answer, footer, .inner, section, .button, a, .app-description, .typewriter h1 {
+	  transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+	}
 
-		/* Light Mode Overrides */
-		body.light-mode {
-		  background-color: #ffffff;
-		  color: #222;
-		}
+	/* Light Mode Overrides */
+	body.light-mode {
+	  background-color: #ffffff;
+	  color: #222;
+	}
 
-		body.light-mode h1,
-		body.light-mode h2,
-		body.light-mode h3,
-		body.light-mode p,
-		body.light-mode .app-description,
-		body.light-mode .typewriter h1 {
-		  color: #222;
-		}
+	body.light-mode h1,
+	body.light-mode h2,
+	body.light-mode h3,
+	body.light-mode p,
+	body.light-mode .app-description,
+	body.light-mode .typewriter h1 {
+	  color: #222;
+	}
 
-		body.light-mode h1,
-		body.light-mode h2,
-		body.light-mode h3 {
-		  text-shadow: 0 1px 1px rgba(0,0,0,0.05);
-		}
+	body.light-mode h1,
+	body.light-mode h2,
+	body.light-mode h3 {
+	  text-shadow: 0 1px 1px rgba(0,0,0,0.05);
+	}
 
-		body.light-mode a,
-		body.light-mode .button {
-		  color: #222;
-		}
+	body.light-mode a,
+	body.light-mode .button {
+	  color: #222;
+	}
 
-		body.light-mode #main,
-		body.light-mode .inner,
-		body.light-mode section {
-		  background-color: #fff;
-		}
+	body.light-mode #main,
+	body.light-mode .inner,
+	body.light-mode section {
+	  background-color: #fff;
+	}
 
-		body.light-mode .faq-question {
-		  background: #eaeaea;
-		  color: #222;
-		}
+	body.light-mode .faq-question {
+	  background: #eaeaea;
+	  color: #222;
+	}
 
-		body.light-mode .faq-answer {
-		  background: #fdfdfd;
-		  color: #222;
-		  border-left-color: #007acc;
-		}
+	body.light-mode .faq-answer {
+	  background: #fdfdfd;
+	  color: #222;
+	  border-left-color: #007acc;
+	}
 
-		body.light-mode footer {
-		  background: #f0f0f0;
-		  color: #222;
-		}
+	body.light-mode footer {
+	  background: #f0f0f0;
+	  color: #222;
+	}
 
-		body.light-mode footer a {
-		  color: #007acc;
-		}
+	body.light-mode footer a {
+	  color: #007acc;
+	}
 
-		body.light-mode .typewriter h1 {
-		  border-right-color: orange;
-		}
+	body.light-mode .typewriter h1 {
+	  border-right-color: orange;
+	}
 
-		body.light-mode .hover-box .overlay-text {
-		background-color: rgba(0, 0, 0, 0.75);
-		color: white;
-		}
+	body.light-mode .hover-box .overlay-text {
+	background-color: rgba(0, 0, 0, 0.75);
+	color: white;
+	}
 
-		body.light-mode footer li,
-		body.light-mode footer ul,
-		body.light-mode .copyright,
-		body.light-mode .app-description strong {
-		  color: #222;
-		}
+	body.light-mode footer li,
+	body.light-mode footer ul,
+	body.light-mode .copyright,
+	body.light-mode .app-description strong {
+	  color: #222;
+	}
 
-		body.light-mode nav,
-		body.light-mode #menu,
-		body.light-mode #menu ul.links li a {
-		  background-color: #fff;
-		  color: #222;
-		}
+	body.light-mode nav,
+	body.light-mode #menu,
+	body.light-mode #menu ul.links li a {
+	  background-color: #fff;
+	  color: #222;
+	}
 
-		/* FAQ Accordion - Improved */
-		.faq-section {
-		  margin-top: 3em;
-		  padding: 0 1em;
-		  max-width: 800px;
-		  margin-left: auto;
-		  margin-right: auto;
-		}
+	/* FAQ Accordion - Improved */
+	.faq-section {
+	  margin-top: 3em;
+	  padding: 0 1em;
+	  max-width: 800px;
+	  margin-left: auto;
+	  margin-right: auto;
+	}
 
-		.faq-item {
-		  margin-bottom: 1.5em;
-		  word-wrap: break-word;
-		}
+	.faq-item {
+	  margin-bottom: 1.5em;
+	  word-wrap: break-word;
+	}
 
-		.faq-question {
-		  width: 100%;
-		  background: #f0f0f0;
-		  color: #333;
-		  padding: 1em;
-		  font-size: 1em;
-		  border: none;
-		  border-radius: 6px;
-		  text-align: left;
-		  cursor: pointer;
-		  transition: background 0.3s ease;
-		  word-wrap: break-word;
-		  white-space: normal;
-		  line-height: 1.5;
-		}
+	.faq-question {
+	  width: 100%;
+	  background: #f0f0f0;
+	  color: #333;
+	  padding: 1em;
+	  font-size: 1em;
+	  border: none;
+	  border-radius: 6px;
+	  text-align: left;
+	  cursor: pointer;
+	  transition: background 0.3s ease;
+	  word-wrap: break-word;
+	  white-space: normal;
+	  line-height: 1.5;
+	}
 
-		.faq-question:hover {
-		  background: #e0e0e0;
-		}
+	.faq-question:hover {
+	  background: #e0e0e0;
+	}
 
-		.faq-answer {
-		  max-height: 0;
-		  overflow: hidden;
-		  opacity: 0;
-		  transition: all 0.4s ease;
-		  padding: 0 1em;
-		  background: #fdfdfd;
-		  border-left: 4px solid #007acc;
-		  border-radius: 4px;
-		  margin-top: 0.3em;
-		  color: black;
-		}
-		.faq-answer.open {
-		  max-height: 500px; /* high enough to fit most answers */
-		  opacity: 1;
-		  padding: 1em;
-		}
+	.faq-answer {
+	  max-height: 0;
+	  overflow: hidden;
+	  opacity: 0;
+	  transition: all 0.4s ease;
+	  padding: 0 1em;
+	  background: #fdfdfd;
+	  border-left: 4px solid #007acc;
+	  border-radius: 4px;
+	  margin-top: 0.3em;
+	  color: black;
+	}
+	.faq-answer.open {
+	  max-height: 500px; /* high enough to fit most answers */
+	  opacity: 1;
+	  padding: 1em;
+	}
     </style>
   </head>
   <body class="is-preload">
