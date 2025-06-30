@@ -116,6 +116,39 @@
 			  font-size: 2.5em;
 			  color: #ffffff;
 			}
+			
+			
+			.parallax-band {
+			  position: relative;
+			  overflow: hidden;
+			  background-image: url('images/parallax-strip.jpg'); /* <-- Replace with your wide background image */
+			  background-repeat: repeat-x;
+			  background-position: 0 center;
+			  background-size: auto 100%;
+			  height: 300px;
+			  display: flex;
+			  align-items: center;
+			  justify-content: center;
+			  text-align: center;
+			  color: white;
+			}
+
+			.parallax-band .parallax-content {
+			  position: relative;
+			  z-index: 2;
+			  background: rgba(0,0,0,0.4);
+			  padding: 1em 2em;
+			  border-radius: 8px;
+			}
+
+			body.scrolling .parallax-band {
+			  animation: scroll-horizontal 30s linear infinite;
+			}
+
+			@keyframes scroll-horizontal {
+			  0% { background-position: 0 center; }
+			  100% { background-position: -1000px center; }
+			}
 	    </style>
 	</head>
 	<body class="is-preload">
@@ -193,6 +226,14 @@
 								</article>
 							</section>
 					</div>
+
+				<!-- Parallax -->
+				<section class="parallax-band">
+				  <div class="parallax-content">
+					<h2>Explore. Learn. Grow.</h2>
+					<p>Next Step Edu tools help learners and teachers connect in new ways.</p>
+				  </div>
+				</section>
 
 				<!-- Contact -->
 					<section id="contact">
@@ -413,6 +454,18 @@
 				  });
 				});
 			  
+			  let lastScrollTop = 0;
+			  window.addEventListener("scroll", function() {
+				let st = window.pageYOffset || document.documentElement.scrollTop;
+				if (Math.abs(st - lastScrollTop) > 5) {
+				  document.body.classList.add("scrolling");
+				  clearTimeout(window.removeScrollClass);
+				  window.removeScrollClass = setTimeout(() => {
+					document.body.classList.remove("scrolling");
+				  }, 1000);
+				}
+				lastScrollTop = st <= 0 ? 0 : st;
+			  }, false);
 			  
 			</script>
 
