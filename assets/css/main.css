@@ -1956,8 +1956,8 @@ input, select, textarea {
 	}
 
 		select option {
-			color: #ffffff;
-			background: #242943;
+			color: #242943;
+			background: #ffffff;
 		}
 
 		select:focus::-ms-value {
