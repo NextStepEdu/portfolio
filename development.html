@@ -1,0 +1,360 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Phantom by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	<style>
+	
+	/* Cookie Info Banner */
+	.cookie-notice {
+	  position: fixed;
+	  bottom: 20px;
+	  left: 20px;
+	  right: 20px;
+	  max-width: 400px;
+	  margin: auto;
+	  background: #333;
+	  color: #fff;
+	  padding: 1em;
+	  border-radius: 6px;
+	  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+	  font-size: 0.9em;
+	  z-index: 9999;
+	  display: none;
+	}
+	.cookie-notice p {
+	  margin: 0 0 0.5em 0;
+	}
+	.cookie-notice button {
+	  background: #007acc;
+	  color: #fff;
+	  border: none;
+	  padding: 0.5em 1em;
+	  border-radius: 4px;
+	  cursor: pointer;
+	  font-size: 0.85em;
+	}
+	.cookie-notice button:hover {
+	  background: #005fa3;
+	}	
+
+	/* 3D Text Effect for Titles */
+	h1, h2, h3 {
+	  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+	}
+
+	.site-title {
+	  text-align: center;
+	  margin-top: 0.5em;
+	  font-size: 2.5em;
+	  color: #ffffff;
+	}
+	</style>	
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Next Step Edu</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="forteachers.html">Teacher Zone</a></li>
+							<li><a href="forlearners.html">Learner Zone</a></li>
+							<li><a href="forparents.html">Parent Zone</a></li>
+							<li><a href="development.html">Development</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<header>
+								<h1>Teacher Zone</h1>
+							</header>
+							<section class="tiles">
+								<article class="style1">
+									<span class="image">
+										<img src="images/learncraft-3.jpg" alt="" />
+									</span>
+									<a href="learncraft.html">
+										<h2>Learn Craft</h2>
+										<p>Interactive English learning app for young learners</p>
+									</a>
+								</article>
+								<article class="style2">
+									<span class="image">
+										<img src="images/teamcraft-3.jpg.jpg" alt="" />
+									</span>
+									<a href="teamcraft.html">
+										<h2>Team Craft</h2>
+										<p>Collaborative classroom game that encourages teamwork</p>
+									</a>
+								</article>
+								<article class="style3">
+									<span class="image">
+										<img src="images/quizbound-4.jpg" alt="" />
+									</span>
+									<a href="quizbound.html">
+										<h2>Quizbound</h2>
+										<p>Fast-paced quiz game for reviewing vocabulary and grammar</p>
+									</a>
+								</article>
+								<article class="style4">
+									<span class="image">
+										<img src="images/quizroyale-2.jpg" alt="" />
+									</span>
+									<a href="quizroyale.html">
+										<h2>Quiz Royale</h2>
+										<p>Classroom battle quiz game with elimination-style play</p>
+									</a>
+								</article>
+							</section>
+						</div>
+					</div>
+
+				<!-- Contact -->
+					<section id="contact">
+						<div class="inner">
+							<section>
+								<form method="POST" action="https://formspree.io/f/mblyzbgy">
+								  <div class="fields">
+									<div class="field half">
+									  <label for="name">Name</label>
+									  <input type="text" name="name" id="name" required />
+									</div>
+									<div class="field half">
+									  <label for="email">Email</label>
+									  <input type="email" name="email" id="email" required />
+									</div>
+									<div class="field half">
+									  <label for="app">App of Interest</label>
+									  <select name="app" id="app" required>
+										<option value="" disabled selected>Select an app</option>
+										<option value="Learn Craft">Learn Craft</option>
+										<option value="Team Craft">Team Craft</option>
+										<option value="Quizbound">Quizbound</option>
+										<option value="Quiz Royale">Quiz Royale</option>
+										<option value="All">All</option>
+									  </select>
+									</div>
+									<div class="field half">
+									  <label for="os">Operating System</label>
+									  <select name="os" id="os" required>
+										<option value="" disabled selected>Select OS</option>
+										<option value="Windows">Windows</option>
+										<option value="Mac">Mac</option>
+										<option value="Both">Both</option>
+									  </select>
+									</div>
+									<div class="field">
+									  <label for="message">Message</label>
+									  <textarea name="message" id="message" rows="6" placeholder="Tell us more about how you plan to use the app..."></textarea>
+									</div>
+									<div class="field">
+									  <label><input type="checkbox" id="humanCheck" /> I’m not a robot</label>
+									</div>
+								  </div>
+								  <ul class="actions">
+									<li><input type="submit" value="Send Message" class="primary" id="submitBtn" disabled /></li>
+									<li><input type="reset" value="Clear" /></li>
+								  </ul>
+								</form>
+
+								<!-- Success message -->
+								<div id="formSuccess" style="display:none; padding: 1em; background: #e6ffe6; color: #004400; border: 1px solid #b2ffb2; border-radius: 6px; margin-top: 1em;">
+								  Thank you! Your request has been sent. We'll get back to you shortly.
+								</div>
+
+							</section>
+							<section class="split">
+								<section>
+									<div class="contact-method">
+										<span class="icon solid alt fa-envelope"></span>
+										<h3>Email</h3>
+										<a href="mailto:nextstepedu2017@gmail.com">nextstepedu2017@gmail.com</a>
+									</div>
+								</section>
+							</section>
+						</div>
+					</section>
+
+				<!-- FAQ Section -->
+				<div class="faq-section">
+				  <h2>Frequently Asked Questions</h2>
+				  <div class="faq-item">
+					<button class="faq-question">Who are these apps for?</button>
+					<div class="faq-answer">Our apps are for teachers and learners.</div>
+				  </div>
+				  <div class="faq-item">
+					<button class="faq-question">Do I need an internet connection?</button>
+					<div class="faq-answer">Yes. You will need a stable internet connection.</div>
+				  </div>
+				  <div class="faq-item">
+					<button class="faq-question">Can I use it with multiple students?</button>
+					<div class="faq-answer">Yes and no! You can have up to three students with Team Craft and Quiz Royale, but Learn Craft and Quizbound are one-on-one.</div>
+				  </div>
+				  <div class="faq-item">
+					<button class="faq-question">What devices are supported?</button>
+					<div class="faq-answer">Next Step software works on Windows and Mac. Touchscreen support is also included in some cases.</div>
+				  </div>
+				  <div class="faq-item">
+					<button class="faq-question">What software do my students need?</button>
+					<div class="faq-answer">Students need the client version for the app using either Windows or Mac.</div>
+				  </div>
+					<div class="faq-item">
+					<button class="faq-question">Can my students use the software independently?</button>
+					<div class="faq-answer">No. Your students need you to share a join code to initiate the lesson.</div>
+				  </div>
+					<div class="faq-item">
+					<button class="faq-question">Do I get a trial?</button>
+					<div class="faq-answer">Yes. You can test the software alone or with students. If you like it, purchase a tier to unlock login attempts.</div>
+				  </div>		  
+					<div class="faq-item">
+					<button class="faq-question">Are materials / clients provided?</button>
+					<div class="faq-answer">No. Materials are created and uploaded at runtime by the user (teacher) and clients are based on the teacher’s existing clientele base.</div>
+				  </div>
+					<div class="faq-item">
+					<button class="faq-question">Are there any discounts / specials?</button>
+					<div class="faq-answer">If you purchase more than one product, a discount will be discussed.</div>
+				  </div>
+					<div class="faq-item">
+					<button class="faq-question">How are accounts created?</button>
+					<div class="faq-answer">Users purchase a tier and are provided with a login and password.</div>
+				  </div>
+					<div class="faq-item">
+					<button class="faq-question">What tiers are available?</button>
+					<div class="faq-answer">There are three tiers. The lower tier has fewer login attempts while the highest tier has more.</div>
+				  </div>
+					<div class="faq-item">
+					<button class="faq-question">What are the prices for each tier?</button>
+					<div class="faq-answer">Contact us for more information, and we’ll gladly discuss it further.</div>
+				  </div>
+				</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+				  <div class="inner">
+					<ul class="icons">
+					  <li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+					  <li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+					  <li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+					  <li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+					  <li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+					</ul>
+					<ul class="copyright">
+					  <li>&copy; 2025 Next Step Edu</li>
+					  <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+					  <li>All content and applications are &copy; Next Step Edu. All rights reserved.</li>
+					</ul>
+				  </div>
+				</footer>
+			  </div>
+			  
+			    <!-- Cookie Notice -->
+				  <div id="cookieNotice" class="cookie-notice">
+					<p>We don’t use tracking cookies. This site uses minimal technical cookies for basic operation only.</p>
+					<button id="cookieDismiss">OK</button>
+				  </div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+			<script>
+			  const checkbox = document.getElementById('humanCheck');
+			  const submitBtn = document.getElementById('submitBtn');
+			  const form = document.querySelector("form");
+			  const formSuccess = document.getElementById("formSuccess");
+
+			  checkbox.addEventListener('change', function () {
+				submitBtn.disabled = !this.checked;
+			  });
+
+			  form.addEventListener("submit", async function (e) {
+				e.preventDefault();
+
+				const formData = new FormData(form);
+
+				submitBtn.disabled = true;
+				submitBtn.value = "Sending...";
+
+				try {
+				  const response = await fetch(form.action, {
+					method: form.method,
+					body: formData,
+					headers: {
+					  'Accept': 'application/json'
+					}
+				  });
+
+				  if (response.ok) {
+					form.style.display = "none";
+					formSuccess.style.display = "block";
+				  } else {
+					alert("Oops! There was a problem submitting your form.");
+				  }
+				} catch (error) {
+				  alert("Something went wrong. Please try again.");
+				} finally {
+				  submitBtn.disabled = false;
+				  submitBtn.value = "Send Message";
+				}
+			  });
+
+			  // FAQ toggle with animation
+			  document.querySelectorAll('.faq-question').forEach(button => {
+				button.addEventListener('click', () => {
+				  const answer = button.nextElementSibling;
+
+				  document.querySelectorAll('.faq-answer').forEach(a => {
+					if (a !== answer) a.classList.remove('open');
+				  });
+
+				  answer.classList.toggle('open');
+				});
+			  });
+			  
+				// Cookie Info Banner Logic
+				document.addEventListener('DOMContentLoaded', () => {
+				  if (!localStorage.getItem('cookieNoticeDismissed')) {
+					document.getElementById('cookieNotice').style.display = 'block';
+				  }
+
+				  document.getElementById('cookieDismiss').addEventListener('click', () => {
+					document.getElementById('cookieNotice').style.display = 'none';
+					localStorage.setItem('cookieNoticeDismissed', 'true');
+				  });
+				});			  
+			</script>
+
+	</body>
+</html>
