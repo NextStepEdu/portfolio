@@ -3798,7 +3798,7 @@ input, select, textarea {
 		-ms-justify-content: center;
 		justify-content: center;
 		pointer-events: none;
-		background: rgba(36, 41, 67, 0.9);
+		background: rgba(43, 49, 115, 0.75);
 		box-shadow: none;
 		height: 100%;
 		left: 0;
