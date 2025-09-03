@@ -7,6 +7,101 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	<style>
+	
+	/* FAQ Accordion - Improved */
+	.faq-section {
+	  margin-top: 3em;
+	  padding: 0 1em;
+	  max-width: 800px;
+	  margin-left: auto;
+	  margin-right: auto;
+	}
+
+	.faq-item {
+	  margin-bottom: 1.5em;
+	  word-wrap: break-word;
+	}
+
+	.faq-question {
+	  width: 100%;
+	  background: #f0f0f0;
+	  color: #333;
+	  padding: 1em;
+	  font-size: 0.7em;
+	  border: none;
+	  border-radius: 6px;
+	  text-align: left;
+	  cursor: pointer;
+	  transition: background 0.3s ease;
+	  word-wrap: break-word;
+	  white-space: normal;
+	  line-height: 1.5;
+	}
+
+	.faq-question:hover {
+	  background: #e0e0e0;
+	}
+
+	.faq-answer {
+	  max-height: 0;
+	  overflow: hidden;
+	  opacity: 0;
+	  transition: all 0.4s ease;
+	  padding: 0 1em;
+	  background: #fdfdfd;
+	  border-left: 4px solid #f2849e;
+	  border-radius: 4px;
+	  margin-top: 0.3em;
+	  color: black;
+	  font-size: 0.7em;
+	}
+	.faq-answer.open {
+	  max-height: 500px; /* high enough to fit most answers */
+	  opacity: 1;
+	  padding: 1em;
+	}
+	
+	/* Make Tile <p> Text Larger and Bolder */
+	.tiles p {
+	  font-size: 1.1em;
+	  font-weight: bold;
+	  line-height: 1.6;
+	  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+	}	
+	
+	/* Cookie Info Banner */
+	.cookie-notice {
+	  position: fixed;
+	  bottom: 20px;
+	  left: 20px;
+	  right: 20px;
+	  max-width: 400px;
+	  margin: auto;
+	  background: #333;
+	  color: #fff;
+	  padding: 1em;
+	  border-radius: 6px;
+	  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+	  font-size: 0.9em;
+	  z-index: 9999;
+	  display: none;
+	}
+	.cookie-notice p {
+	  margin: 0 0 0.5em 0;
+	}
+	.cookie-notice button {
+	  background: #007acc;
+	  color: #fff;
+	  border: none;
+	  padding: 0.5em 1em;
+	  border-radius: 4px;
+	  cursor: pointer;
+	  font-size: 0.85em;
+	}
+	.cookie-notice button:hover {
+	  background: #005fa3;
+	}	
+
 	/* 3D Text Effect for Titles */
 	h1, h2, h3 {
 	  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
@@ -19,6 +114,15 @@
 	  color: #ffffff;
 	}
 	
+	.email-brochure-section {
+	  margin-top: 3em;
+	  padding: 0 1em;
+	  max-width: 800px;
+	  margin-left: auto;
+	  margin-right: auto;
+	  text-align: center;
+	}
+
 	.footer-logo {
 	  text-align: center;
 	  margin-bottom: 1em;
@@ -35,7 +139,8 @@
 	  align-items: center;
 	  justify-content: center;
 	  text-align: center;
-	}		
+	}	
+	
 	</style>	
 	</head>
 	<body class="is-preload">
@@ -69,10 +174,22 @@
 						<h2>Menu</h2>
 						<ul>
 							<li><a href="index.html">Home</a></li>
-							<li><a href="forteachers.html">Teacher Zone</a></li>
-							<li><a href="forlearners.html">Learner Zone</a></li>
-							<li><a href="forparents.html">Parent Zone</a></li>
-							<li><a href="development.html">Development</a></li>
+						    <li><a href="learncraft.html">Learn Craft</a></li>
+						    <li><a href="teamcraft.html">Team Craft</a></li>
+					  	    <li><a href="quizbound.html">Quizbound</a></li>
+							<li><a href="quizroyale.html">Quiz Royale</a></li>
+						</ul>
+					</nav>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+						    <li><a href="learncraft.html">Learn Craft</a></li>
+						    <li><a href="teamcraft.html">Team Craft</a></li>
+					  	    <li><a href="quizbound.html">Quizbound</a></li>
+							<li><a href="lingoland.html">LingoLand</a></li>
 						</ul>
 					</nav>
 
@@ -80,12 +197,95 @@
 					<div id="main">
 						<div class="inner">
 							<header>
-								<h1>Build your world, grow your words!</h1>
-								<p style="font-size: 1.1em; margin-top: 0.3em;">LingoLand is an action-packed, self-learning adventure for your children.</p>
+								<h1>LingoLand</h1>
 							</header>
+							<section class="tiles">
+								<article class="style1">
+									<span class="image">
+										<img src="images/pic01.jpg" alt="" />
+									</span>
+									<a>
+										<h2>?</h2>
+										<p>?</p>
+									</a>
+								</article>
+								<article class="style2">
+									<span class="image">
+										<img src="images/pic02.jpg" alt="" />
+									</span>
+									<a>
+										<h2>?</h2>
+										<p>?</p>
+									</a>
+								</article>
+								<article class="style3">
+									<span class="image">
+										<img src="images/pic03.jpg" alt="" />
+									</span>
+									<a>
+										<h2>?</h2>
+										<p>?</p>
+									</a>
+								</article>
+								<article class="style4">
+									<span class="image">
+										<img src="images/pic04.jpg" alt="" />
+									</span>
+									<a>
+										<h2>?</h2>
+										<p>?</p>
+									</a>
+								</article>
+								<article class="style5">
+									<span class="image">
+										<img src="images/lingoland-1.png" alt="" />
+								</article>		
+								<article class="style5">
+									<span class="image">
+										<img src="images/lingoland-2.png" alt="" />
+								</article>	
+								<article class="style5">
+									<span class="image">
+										<img src="images/lingoland-3.png" alt="" />
+								</article>	
+								<article class="style5">
+									<span class="image">
+										<img src="images/lingoland-4.png" alt="" />
+								</article>									
 							</section>
 						</div>
 					</div>
+
+			<div class="email-brochure-section">
+			  <p>Download the brochure for more details. If you're interested in using Quiz Royale in your classroom, feel free to contact us:</p>
+			  <a href="mailto:nextstepedu2017@gmail.com?subject=LingoLand Inquiry" class="button primary">Email Us</a>
+			  <p><a href="files/LingoLand-Brochure.pdf" class="button icon solid fa-download" target="_blank">Download Brochure</a></p>
+			</div>
+
+			<!-- FAQ Section -->
+			<div class="faq-section">
+			  <h2>Frequently Asked Questions</h2>
+			  <div class="faq-item">
+				<button class="faq-question">Who is Quiz Royale for?</button>
+				<div class="faq-answer">Quiz Royale is for teachers with their own clientele base.</div>
+			  </div>
+				<div class="faq-item">
+				<button class="faq-question">How many students can join?</button>
+				<div class="faq-answer">Quiz Royale allows up to three students.</div>
+			  </div>
+				<div class="faq-item">
+				<button class="faq-question">Is there a lesson time limit?</button>
+				<div class="faq-answer">Yes. Quiz Royale has a 35 minute time limit.</div>
+			  </div>
+			  	<div class="faq-item">
+				<button class="faq-question">What software is required?</button>
+				<div class="faq-answer">Quiz Royale does not have video/voice software included. Use your preferred software Zoom, Teams, etc.</div>
+			  </div>
+			</div>
+
+          </div>
+        </section>
+      </div>
 
 				<!-- Footer -->
 				<footer id="footer">
@@ -110,7 +310,19 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
-			<script>  
+			<script>
+			  // FAQ toggle with animation
+			  document.querySelectorAll('.faq-question').forEach(button => {
+				button.addEventListener('click', () => {
+				  const answer = button.nextElementSibling;
+
+				  document.querySelectorAll('.faq-answer').forEach(a => {
+					if (a !== answer) a.classList.remove('open');
+				  });
+
+				  answer.classList.toggle('open');
+				});
+			  });
 			</script>
 
 	</body>
