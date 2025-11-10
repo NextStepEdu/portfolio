@@ -69,6 +69,42 @@
 	  background-color: #ff6666;
 	}
 
+	/* Transformers Gallery Section */
+	#transformers-gallery {
+	  background-color: #111;
+	  color: #fff;
+	  border-top: 2px solid #333;
+	  border-bottom: 2px solid #333;
+	}
+
+	#transformers-gallery h2 {
+	  font-size: 2em;
+	  margin-bottom: 1em;
+	  text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+	}
+
+	.gallery {
+	  display: grid;
+	  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	  gap: 15px;
+	  justify-items: center;
+	  align-items: center;
+	}
+
+	.gallery img {
+	  width: 100%;
+	  max-width: 300px;
+	  height: auto;
+	  border-radius: 10px;
+	  box-shadow: 0 0 10px rgba(255,255,255,0.2);
+	  transition: transform 0.3s, box-shadow 0.3s;
+	}
+
+	.gallery img:hover {
+	  transform: scale(1.05);
+	  box-shadow: 0 0 15px rgba(255,255,255,0.5);
+	}
+
 	</style>	
 	</head>
 	<body class="is-preload">
@@ -121,6 +157,19 @@
 				  </div>
 				</section>
 
+				<!-- Image Gallery -->
+				<section id="transformers-gallery" class="wrapper style1">
+				  <div class="inner" style="text-align:center; padding: 2em;">
+					<h2>Game Screenshots</h2>
+					<div class="gallery">
+					  <img src="images/ss1.png" alt="Gameplay 1">
+					  <img src="images/ss2.png" alt="Gameplay 2">
+					  <img src="images/ss3.png" alt="Gameplay 3">
+					  <img src="images/ss4.png" alt="Gameplay 4">
+					  <img src="images/ss5.png" alt="Gameplay 5">
+					</div>
+				  </div>
+				</section>
 
 				<!-- Footer -->
 				<footer id="footer">
