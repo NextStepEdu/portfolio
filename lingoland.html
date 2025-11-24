@@ -1,329 +1,377 @@
 <!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Phantom by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	<style>
-	
-	/* FAQ Accordion - Improved */
-	.faq-section {
-	  margin-top: 3em;
-	  padding: 0 1em;
-	  max-width: 800px;
-	  margin-left: auto;
-	  margin-right: auto;
-	}
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>LingoLand — Next Step Edu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-	.faq-item {
-	  margin-bottom: 1.5em;
-	  word-wrap: break-word;
-	}
+<style>
+/* FAQ Accordion - Improved */
+.faq-section {
+  margin-top: 3em;
+  padding: 0 1em;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-	.faq-question {
-	  width: 100%;
-	  background: #f0f0f0;
-	  color: #333;
-	  padding: 1em;
-	  font-size: 0.7em;
-	  border: none;
-	  border-radius: 6px;
-	  text-align: left;
-	  cursor: pointer;
-	  transition: background 0.3s ease;
-	  word-wrap: break-word;
-	  white-space: normal;
-	  line-height: 1.5;
-	}
+.faq-item {
+  margin-bottom: 1.5em;
+  word-wrap: break-word;
+}
 
-	.faq-question:hover {
-	  background: #e0e0e0;
-	}
+.faq-question {
+  width: 100%;
+  background: #f0f0f0;
+  color: #333;
+  padding: 1em;
+  font-size: 0.9em;
+  border: none;
+  border-radius: 6px;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  word-wrap: break-word;
+  white-space: normal;
+  line-height: 1.5;
+}
 
-	.faq-answer {
-	  max-height: 0;
-	  overflow: hidden;
-	  opacity: 0;
-	  transition: all 0.4s ease;
-	  padding: 0 1em;
-	  background: #fdfdfd;
-	  border-left: 4px solid #f2849e;
-	  border-radius: 4px;
-	  margin-top: 0.3em;
-	  color: black;
-	  font-size: 0.7em;
-	}
-	.faq-answer.open {
-	  max-height: 500px; /* high enough to fit most answers */
-	  opacity: 1;
-	  padding: 1em;
-	}
-	
-	/* Make Tile <p> Text Larger and Bolder */
-	.tiles p {
-	  font-size: 1.1em;
-	  font-weight: bold;
-	  line-height: 1.6;
-	  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-	}	
-	
-	/* Cookie Info Banner */
-	.cookie-notice {
-	  position: fixed;
-	  bottom: 20px;
-	  left: 20px;
-	  right: 20px;
-	  max-width: 400px;
-	  margin: auto;
-	  background: #333;
-	  color: #fff;
-	  padding: 1em;
-	  border-radius: 6px;
-	  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-	  font-size: 0.9em;
-	  z-index: 9999;
-	  display: none;
-	}
-	.cookie-notice p {
-	  margin: 0 0 0.5em 0;
-	}
-	.cookie-notice button {
-	  background: #007acc;
-	  color: #fff;
-	  border: none;
-	  padding: 0.5em 1em;
-	  border-radius: 4px;
-	  cursor: pointer;
-	  font-size: 0.85em;
-	}
-	.cookie-notice button:hover {
-	  background: #005fa3;
-	}	
+.faq-question:hover {
+  background: #e0e0e0;
+}
 
-	/* 3D Text Effect for Titles */
-	h1, h2, h3 {
-	  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
-	}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.4s ease;
+  padding: 0 1em;
+  background: #fdfdfd;
+  border-left: 4px solid #f2849e;
+  border-radius: 4px;
+  margin-top: 0.3em;
+  color: black;
+  font-size: 0.9em;
+}
+.faq-answer.open {
+  max-height: 500px; /* high enough to fit most answers */
+  opacity: 1;
+  padding: 1em;
+}
 
-	.site-title {
-	  text-align: center;
-	  margin-top: 0.5em;
-	  font-size: 2.5em;
-	  color: #ffffff;
-	}
-	
-	.email-brochure-section {
-	  margin-top: 3em;
-	  padding: 0 1em;
-	  max-width: 800px;
-	  margin-left: auto;
-	  margin-right: auto;
-	  text-align: center;
-	}
+/* Make Tile <p> Text Larger and Bolder */
+.tiles p {
+  font-size: 1.1em;
+  font-weight: bold;
+  line-height: 1.6;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
 
-	.footer-logo {
-	  text-align: center;
-	  margin-bottom: 1em;
-	}
-	.footer-logo img {
-	  max-width: 200px;
-	  height: auto;
-	  margin: 0 auto;
-	  display: block;
-	}
-	#footer .inner {
-	  display: flex;
-	  flex-direction: column;
-	  align-items: center;
-	  justify-content: center;
-	  text-align: center;
-	}	
-	
-	</style>	
-	</head>
-	<body class="is-preload">
-		<!-- Wrapper -->
-			<div id="wrapper">
+/* Email / brochure section */
+.email-brochure-section {
+  margin-top: 3em;
+  padding: 0 1em;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
 
-				<!-- Header -->
-					<header id="header">
-						<div class="inner">
+/* Footer logo */
+.footer-logo {
+  text-align: center;
+  margin-bottom: 1em;
+}
+.footer-logo img {
+  max-width: 200px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+#footer .inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 
-							<!-- Logo -->
-								<a href="index.html" class="logo">
-									<span class="symbol">
-										<img src="images/logo.svg" alt="" style="width: 100px; height: auto;" />
-									</span>
-									<span class="title">Next Step Edu</span>
-								</a>
+/* Image Zoom Modal */
+.img-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9);
+}
 
-							<!-- Nav -->
-								<nav>
-									<ul>
-										<li><a href="#menu">Menu</a></li>
-									</ul>
-								</nav>
+.img-modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.3);
+}
 
-						</div>
-					</header>
+.img-close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: #fff;
+  font-size: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
 
-				<!-- Menu -->
-					<nav id="menu">
-						<h2>Menu</h2>
-						<ul>
-							<li><a href="index.html">Home</a></li>
-						    <li><a href="learncraft.html">Learn Craft</a></li>
-						    <li><a href="teamcraft.html">Team Craft</a></li>
-					  	    <li><a href="quizbound.html">Quizbound</a></li>
-							<li><a href="quizroyale.html">Quiz Royale</a></li>
-						</ul>
-					</nav>
+.img-close:hover {
+  color: #ff5050;
+}
 
-				<!-- Menu -->
-					<nav id="menu">
-						<h2>Menu</h2>
-						<ul>
-							<li><a href="index.html">Home</a></li>
-						    <li><a href="learncraft.html">Learn Craft</a></li>
-						    <li><a href="teamcraft.html">Team Craft</a></li>
-					  	    <li><a href="quizbound.html">Quizbound</a></li>
-							<li><a href="lingoland.html">LingoLand</a></li>
-						</ul>
-					</nav>
+/* Small visual hint for clickable images */
+.tiles img {
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.tiles img:hover { transform: scale(1.03); box-shadow: 0 6px 18px rgba(0,0,0,0.25); }
 
-				<!-- Main -->
-					<div id="main">
-						<div class="inner">
-							<header>
-								<h1>LingoLand</h1>
-							</header>
-							<section class="tiles">
-								<article class="style1">
-									<span class="image">
-										<img src="images/pic01.jpg" alt="" />
-									</span>
-									<a>
-										<h2>Planet & Solar System Interaction</h2>
-										<p>Explore language learning like never before! Navigate planets and solar systems while uncovering new words and concepts in a fun, visual way.</p>
-									</a>
-								</article>
-								<article class="style2">
-									<span class="image">
-										<img src="images/pic02.jpg" alt="" />
-									</span>
-									<a>
-										<h2>Spinning Wheel Game</h2>
-										<p>Spin to win! The interactive wheel adds excitement to learning, turning every question into a game of chance and discovery.</p>
-									</a>
-								</article>
-								<article class="style3">
-									<span class="image">
-										<img src="images/pic03.jpg" alt="" />
-									</span>
-									<a>
-										<h2>Flashcard Challenge</h2>
-										<p>Boost memory and vocabulary with dynamic flashcards. Test knowledge, practice recall, and make learning quick, effective, and fun.</p>
-									</a>
-								</article>
-								<article class="style4">
-									<span class="image">
-										<img src="images/pic04.jpg" alt="" />
-									</span>
-									<a>
-										<h2>Interactive Collaboration</h2>
-										<p>Work together in real time! Tutors and learners can draw, write, and solve challenges on a shared whiteboard — wherever they are in the world.</p>
-									</a>
-								</article>
-								<article class="style5">
-									<span class="image">
-										<img src="images/lingoland-1.png" alt="" />
-								</article>		
-								<article class="style5">
-									<span class="image">
-										<img src="images/lingoland-2.png" alt="" />
-								</article>	
-								<article class="style5">
-									<span class="image">
-										<img src="images/lingoland-3.png" alt="" />
-								</article>	
-								<article class="style5">
-									<span class="image">
-										<img src="images/lingoland-4.png" alt="" />
-								</article>									
-							</section>
-						</div>
-					</div>
+</style>
+</head>
 
-			<div class="email-brochure-section">
-			  <p>Download the brochure for more details. If you're interested in using LingoLand in your classroom, feel free to contact us:</p>
-			  <a href="mailto:nextstepedu2017@gmail.com?subject=LingoLand Inquiry" class="button primary">Email Us</a>
-			  <p><a href="files/LingoLand-Brochure.pdf" class="button icon solid fa-download" target="_blank">Download Brochure</a></p>
-			</div>
+<body class="is-preload">
 
-			<!-- FAQ Section -->
-			<div class="faq-section">
-			  <h2>Frequently Asked Questions</h2>
-			  <div class="faq-item">
-				<button class="faq-question">Who is LingoLand for?</button>
-				<div class="faq-answer">LingoLand is for teachers with their own clientele base.</div>
-			  </div>
-				<div class="faq-item">
-				<button class="faq-question">How many students can join?</button>
-				<div class="faq-answer">LingoLand is only for one-on-one lessons.</div>
-			  </div>
-				<div class="faq-item">
-				<button class="faq-question">Is there a lesson time limit?</button>
-				<div class="faq-answer">Yes. LingoLand has a 35 minute time limit.</div>
-			  </div>
-			  	<div class="faq-item">
-				<button class="faq-question">What software is required?</button>
-				<div class="faq-answer">LingoLand includes video/voice along with chat.</div>
-			  </div>
-			</div>
+  <!-- Image Zoom Modal (inside body) -->
+  <div id="imgModal" class="img-modal" aria-hidden="true" role="dialog">
+    <button class="img-close" aria-label="Close image">&times;</button>
+    <img class="img-modal-content" id="imgModalContent" alt="">
+  </div>
+  
+	<!-- Wrapper -->
+	<div id="wrapper">
 
-          </div>
-        </section>
+	<!-- Header -->
+    <header id="header">
+      <div class="inner">
+        <a href="index.html" class="logo">
+          <span class="symbol"><img src="images/logo.svg" alt="" style="width:100px; height:auto;"></span>
+          <span class="title">Next Step Edu</span>
+        </a>
+
+        <nav>
+          <ul>
+            <li><a href="#menu">Menu</a></li>
+          </ul>
+        </nav>
       </div>
+    </header>
 
-				<!-- Footer -->
-				<footer id="footer">
-				  <div class="inner">
-					<div class="footer-logo">
-						<img src="images/footer-logo.png" alt="Footer Logo">
-					</div>
-					<ul class="copyright">
-					  <li>&copy; 2025 Next Step Edu</li>
-					  <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-					  <li>All content and applications are &copy; Next Step Edu. All rights reserved.</li>
-					</ul>
-				  </div>
-				</footer>
-			  
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+	<!-- Menu -->
+		<nav id="menu">
+			<h2>Menu</h2>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="learncraft.html">Learn Craft</a></li>
+				<li><a href="teamcraft.html">Team Craft</a></li>
+				<li><a href="quizbound.html">Quizbound</a></li>
+				<li><a href="quizroyale.html">Quiz Royale</a></li>
+			</ul>
+		</nav>
 
-			<script>
-			  // FAQ toggle with animation
-			  document.querySelectorAll('.faq-question').forEach(button => {
-				button.addEventListener('click', () => {
-				  const answer = button.nextElementSibling;
+    <!-- Main -->
+	<nav id="menu">
+		<h2>Menu</h2>
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="learncraft.html">Learn Craft</a></li>
+			<li><a href="teamcraft.html">Team Craft</a></li>
+			<li><a href="quizbound.html">Quizbound</a></li>
+			<li><a href="lingoland.html">LingoLand</a></li>
+		</ul>
+	</nav>
 
-				  document.querySelectorAll('.faq-answer').forEach(a => {
-					if (a !== answer) a.classList.remove('open');
-				  });
+    <!-- Main content -->
+	<div id="main">
+		<div class="inner">
+			<header>
+				<h1>LingoLand</h1>
+			</header>
+			<section class="tiles">
+				<article class="style1">
+					<span class="image">
+						<img src="images/pic01.jpg" alt="" />
+					</span>
+					<a>
+						<h2>Planet & Solar System Interaction</h2>
+						<p>Explore language learning like never before! Navigate planets and solar systems while uncovering new words and concepts in a fun, visual way.</p>
+					</a>
+				</article>
+				<article class="style2">
+					<span class="image">
+						<img src="images/pic02.jpg" alt="" />
+					</span>
+					<a>
+						<h2>Spinning Wheel Game</h2>
+						<p>Spin to win! The interactive wheel adds excitement to learning, turning every question into a game of chance and discovery.</p>
+					</a>
+				</article>
+				<article class="style3">
+					<span class="image">
+						<img src="images/pic03.jpg" alt="" />
+					</span>
+					<a>
+						<h2>Flashcard Challenge</h2>
+						<p>Boost memory and vocabulary with dynamic flashcards. Test knowledge, practice recall, and make learning quick, effective, and fun.</p>
+					</a>
+				</article>
+				<article class="style4">
+					<span class="image">
+						<img src="images/pic04.jpg" alt="" />
+					</span>
+					<a>
+						<h2>Interactive Collaboration</h2>
+						<p>Work together in real time! Tutors and learners can draw, write, and solve challenges on a shared whiteboard — wherever they are in the world.</p>
+					</a>
+				</article>
+				<article class="style5">
+					<span class="image">
+						<img src="images/lingoland-1.png" alt="" />
+				</article>		
+				<article class="style5">
+					<span class="image">
+						<img src="images/lingoland-2.png" alt="" />
+				</article>	
+				<article class="style5">
+					<span class="image">
+						<img src="images/lingoland-3.png" alt="" />
+				</article>	
+				<article class="style5">
+					<span class="image">
+						<img src="images/lingoland-4.png" alt="" />
+				</article>									
+			</section>
+		</div>
+	</div>
 
-				  answer.classList.toggle('open');
-				});
-			  });
-			</script>
+	<div class="email-brochure-section">
+	  <p>Download the brochure for more details. If you're interested in using LingoLand in your classroom, feel free to contact us:</p>
+	  <a href="mailto:nextstepedu2017@gmail.com?subject=LingoLand Inquiry" class="button primary">Email Us</a>
+	  <p><a href="files/LingoLand-Brochure.pdf" class="button icon solid fa-download" target="_blank">Download Brochure</a></p>
+	</div>
 
-	</body>
+	<!-- FAQ Section -->
+	<div class="faq-section">
+	  <h2>Frequently Asked Questions</h2>
+	  
+	  <div class="faq-item">
+		<button class="faq-question">Who is LingoLand for?</button>
+		<div class="faq-answer">LingoLand is for teachers with their own clientele base.</div>
+	  </div>
+	  
+		<div class="faq-item">
+		<button class="faq-question">How many students can join?</button>
+		<div class="faq-answer">LingoLand is only for one-on-one lessons.</div>
+	  </div>
+	  
+		<div class="faq-item">
+		<button class="faq-question">Is there a lesson time limit?</button>
+		<div class="faq-answer">Yes. LingoLand has a 35 minute time limit.</div>
+	  </div>
+	  
+		<div class="faq-item">
+		<button class="faq-question">What software is required?</button>
+		<div class="faq-answer">LingoLand includes video/voice along with chat.</div>
+	  </div>
+	</div>
+
+	<!-- Footer -->
+	<footer id="footer">
+	  <div class="inner">
+		<div class="footer-logo">
+			<img src="images/footer-logo.png" alt="Footer Logo">
+		</div>
+		<ul class="copyright">
+		  <li>&copy; 2025 Next Step Edu</li>
+		  <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+		  <li>All content and applications are &copy; Next Step Edu. All rights reserved.</li>
+		</ul>
+	  </div>
+	</footer>
+	
+	</div> <!-- /#wrapper -->
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+ <!-- Page JS: image zoom + FAQ -->
+  <script>
+  (function () {
+    // Image zoom modal
+    document.addEventListener('DOMContentLoaded', () => {
+      const modal = document.getElementById('imgModal');
+      const modalImg = document.getElementById('imgModalContent');
+      const closeBtn = modal.querySelector('.img-close');
+
+      document.querySelectorAll('.tiles img').forEach(img => {
+        img.addEventListener('click', () => {
+          modalImg.src = img.src;
+          modalImg.alt = img.alt || '';
+          modal.style.display = 'block';
+          modal.setAttribute('aria-hidden', 'false');
+          // prevent page scroll behind modal
+          document.body.style.overflow = 'hidden';
+        });
+      });
+
+      closeBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        modalImg.src = '';
+      });
+
+      // click outside image closes modal
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          closeBtn.click();
+        }
+      });
+
+      // Esc to close
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.style.display === 'block') {
+          closeBtn.click();
+        }
+      });
+    });
+
+    // FAQ toggle
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.faq-question').forEach(button => {
+        button.addEventListener('click', () => {
+          const answer = button.nextElementSibling;
+          document.querySelectorAll('.faq-answer').forEach(a => {
+            if (a !== answer) a.classList.remove('open');
+          });
+          answer.classList.toggle('open');
+        });
+      });
+    });
+  })();
+  </script>
+
+</body>
 </html>
