@@ -7,6 +7,59 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	<style>
+	/* FAQ Accordion - Improved */
+	.faq-section {
+	  margin-top: 3em;
+	  padding: 0 1em;
+	  max-width: 800px;
+	  margin-left: auto;
+	  margin-right: auto;
+	}
+
+	.faq-item {
+	  margin-bottom: 1.5em;
+	  word-wrap: break-word;
+	}
+
+	.faq-question {
+	  width: 100%;
+	  background: #f0f0f0;
+	  color: #333;
+	  padding: 1em;
+	  font-size: 0.9em;
+	  border: none;
+	  border-radius: 6px;
+	  text-align: left;
+	  cursor: pointer;
+	  transition: background 0.3s ease;
+	  word-wrap: break-word;
+	  white-space: normal;
+	  line-height: 1.5;
+	}
+
+	.faq-question:hover {
+	  background: #e0e0e0;
+	}
+
+	.faq-answer {
+	  max-height: 0;
+	  overflow: hidden;
+	  opacity: 0;
+	  transition: all 0.4s ease;
+	  padding: 0 1em;
+	  background: #fdfdfd;
+	  border-left: 4px solid #f2849e;
+	  border-radius: 4px;
+	  margin-top: 0.3em;
+	  color: black;
+	  font-size: 0.9em;
+	}
+	.faq-answer.open {
+	  max-height: 500px; /* high enough to fit most answers */
+	  opacity: 1;
+	  padding: 1em;
+	}	
+	
 	/* 3D Text Effect for Titles */
 	h1, h2, h3 {
 	  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
@@ -218,6 +271,31 @@
 				  </div>
 				</section>
 
+				<!-- FAQ Section -->
+				<div class="faq-section">
+				  <h2>Frequently Asked Questions</h2>
+				  
+				  <div class="faq-item">
+					<button class="faq-question">Who is LingoLand for?</button>
+					<div class="faq-answer">LingoLand is for teachers with their own clientele base.</div>
+				  </div>
+				  
+					<div class="faq-item">
+					<button class="faq-question">How many students can join?</button>
+					<div class="faq-answer">LingoLand is only for one-on-one lessons.</div>
+				  </div>
+				  
+					<div class="faq-item">
+					<button class="faq-question">Is there a lesson time limit?</button>
+					<div class="faq-answer">Yes. LingoLand has a 35 minute time limit.</div>
+				  </div>
+				  
+					<div class="faq-item">
+					<button class="faq-question">What software is required?</button>
+					<div class="faq-answer">LingoLand includes video/voice along with chat.</div>
+				  </div>
+				</div>
+
 				<!-- Footer -->
 				<footer id="footer">
 				  <div class="inner">
@@ -266,6 +344,19 @@
 				if (e.target === modal) modal.style.display = "none";
 			};
 		});
+		
+		// FAQ toggle
+		document.addEventListener('DOMContentLoaded', () => {
+		  document.querySelectorAll('.faq-question').forEach(button => {
+			button.addEventListener('click', () => {
+			  const answer = button.nextElementSibling;
+			  document.querySelectorAll('.faq-answer').forEach(a => {
+				if (a !== answer) a.classList.remove('open');
+			  });
+			  answer.classList.toggle('open');
+			});
+		  });
+		});		
 		</script>
 
 		<!-- Image Zoom Modal -->
