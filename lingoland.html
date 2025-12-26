@@ -1,343 +1,272 @@
 <!DOCTYPE HTML>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <title>LingoLand — Next Step Edu</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+<html>
+	<head>
+		<title>Phantom by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	<style>
+	/* 3D Text Effect for Titles */
+	h1, h2, h3 {
+	  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+	}
 
-<style>
-/* FAQ Accordion - Improved */
-.faq-section {
-  margin-top: 3em;
-  padding: 0 1em;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.faq-item {
-  margin-bottom: 1.5em;
-  word-wrap: break-word;
-}
-
-.faq-question {
-  width: 100%;
-  background: #f0f0f0;
-  color: #333;
-  padding: 1em;
-  font-size: 0.9em;
-  border: none;
-  border-radius: 6px;
-  text-align: left;
-  cursor: pointer;
-  transition: background 0.3s ease;
-  word-wrap: break-word;
-  white-space: normal;
-  line-height: 1.5;
-}
-
-.faq-question:hover {
-  background: #e0e0e0;
-}
-
-.faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: all 0.4s ease;
-  padding: 0 1em;
-  background: #fdfdfd;
-  border-left: 4px solid #f2849e;
-  border-radius: 4px;
-  margin-top: 0.3em;
-  color: black;
-  font-size: 0.9em;
-}
-.faq-answer.open {
-  max-height: 500px; /* high enough to fit most answers */
-  opacity: 1;
-  padding: 1em;
-}
-
-/* Make Tile <p> Text Larger and Bolder */
-.tiles p {
-  font-size: 1.1em;
-  font-weight: bold;
-  line-height: 1.6;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-}
-
-/* Email / brochure section */
-.email-brochure-section {
-  margin-top: 3em;
-  padding: 0 1em;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-
-/* Footer logo */
-.footer-logo {
-  text-align: center;
-  margin-bottom: 1em;
-}
-.footer-logo img {
-  max-width: 200px;
-  height: auto;
-  margin: 0 auto;
-  display: block;
-}
-#footer .inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-/* Image Zoom Modal */
-.img-modal {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  padding-top: 60px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.9);
-}
-
-.img-modal-content {
-  margin: auto;
-  display: block;
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(255,255,255,0.3);
-}
-
-.img-close {
-  position: absolute;
-  top: 20px;
-  right: 40px;
-  color: #fff;
-  font-size: 50px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.img-close:hover {
-  color: #ff5050;
-}
-
-/* Small visual hint for clickable images */
-.tiles img {
-  cursor: pointer;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-.tiles img:hover { transform: scale(1.03); box-shadow: 0 6px 18px rgba(0,0,0,0.25); }
-
-</style>
-</head>
-
-<body class="is-preload">
-
-  <!-- Image Zoom Modal (inside body) -->
-  <div id="imgModal" class="img-modal" aria-hidden="true" role="dialog">
-    <button class="img-close" aria-label="Close image">&times;</button>
-    <img class="img-modal-content" id="imgModalContent" alt="">
-  </div>
-  
-	<!-- Wrapper -->
-	<div id="wrapper">
-
-	<!-- Header -->
-    <header id="header">
-      <div class="inner">
-        <a href="index.html" class="logo">
-          <span class="symbol"><img src="images/logo.svg" alt="" style="width:100px; height:auto;"></span>
-          <span class="title">Next Step Edu</span>
-        </a>
-
-        <nav>
-          <ul>
-            <li><a href="#menu">Menu</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-
-    <!-- Main -->
-	<nav id="menu">
-		<h2>Menu</h2>
-		<ul>
-			<li><a href="index.html">Home</a></li>
-			<li><a href="forteachers.html">Teacher Zone</a></li>
-			<li><a href="forlearners.html">Learner Zone</a></li>
-			<li><a href="fordevelopment.html">Development Zone</a></li>
-		</ul>
-	</nav>
-
-    <!-- Main content -->
-	<div id="main">
-		<div class="inner">
-			<header>
-				<h1>LingoLand</h1>
-				<p style="font-size: 1.1em; margin-top: 0.3em;">Engage your learners with an interactive whiteboard</p>
-				<a>
-					<h2>Interactive Collaboration</h2>
-					<p>Work together in real time! Tutors and learners can draw, write, and solve challenges on a shared whiteboard — wherever they are in the world.</p>
-				<a>
-					<h2>Planet & Solar System Interaction</h2>
-					<p>Explore language learning like never before! Navigate planets and solar systems while uncovering new words and concepts in a fun, visual way.</p>
-				<a>
-					<h2>Spinning Wheel Game</h2>
-					<p>Spin to win! The interactive wheel adds excitement to learning, turning every question into a game of chance and discovery.</p>
-				<a>
-					<h2>Flashcard Challenge</h2>
-					<p>Boost memory and vocabulary with dynamic flashcards. Test knowledge, practice recall, and make learning quick, effective, and fun.</p>
-				<a>
-
-			</header>
-			<section class="tiles">
-				<article class="style5">
-					<span class="image">
-						<img src="images/lingoland-4.png" alt="" />
-				</article>		
-				<article class="style5">
-					<span class="image">
-						<img src="images/lingoland-2.png" alt="" />
-				</article>	
-				<article class="style5">
-					<span class="image">
-						<img src="images/lingoland-3.png" alt="" />
-				</article>	
-				<article class="style5">
-					<span class="image">
-						<img src="images/lingoland-1.png" alt="" />
-				</article>									
-			</section>
-		</div>
-	</div>
-
-	<div class="email-brochure-section">
-	  <p>Download the brochure for more details. If you're interested in using LingoLand in your classroom, feel free to contact us:</p>
-	  <a href="mailto:nextstepedu2017@gmail.com?subject=LingoLand Inquiry" class="button primary">Email Us</a>
-	  <p><a href="files/LingoLand-Brochure.pdf" class="button icon solid fa-download" target="_blank">Download Brochure</a></p>
-	</div>
-
-	<!-- FAQ Section -->
-	<div class="faq-section">
-	  <h2>Frequently Asked Questions</h2>
-	  
-	  <div class="faq-item">
-		<button class="faq-question">Who is LingoLand for?</button>
-		<div class="faq-answer">LingoLand is for teachers with their own clientele base.</div>
-	  </div>
-	  
-		<div class="faq-item">
-		<button class="faq-question">How many students can join?</button>
-		<div class="faq-answer">LingoLand is only for one-on-one lessons.</div>
-	  </div>
-	  
-		<div class="faq-item">
-		<button class="faq-question">Is there a lesson time limit?</button>
-		<div class="faq-answer">Yes. LingoLand has a 35 minute time limit.</div>
-	  </div>
-	  
-		<div class="faq-item">
-		<button class="faq-question">What software is required?</button>
-		<div class="faq-answer">LingoLand includes video/voice along with chat.</div>
-	  </div>
-	</div>
-
-	<!-- Footer -->
-	<footer id="footer">
-	  <div class="inner">
-		<div class="footer-logo">
-			<img src="images/footer-logo.png" alt="Footer Logo">
-		</div>
-		<ul class="copyright">
-		  <li>&copy; 2025 Next Step Edu</li>
-		  <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-		  <li>All content and applications are &copy; Next Step Edu. All rights reserved.</li>
-		</ul>
-	  </div>
-	</footer>
+	.site-title {
+	  text-align: center;
+	  margin-top: 0.5em;
+	  font-size: 2.5em;
+	  color: #ffffff;
+	}
 	
-	</div> <!-- /#wrapper -->
+	.footer-logo {
+	  text-align: center;
+	  margin-bottom: 1em;
+	}
+	.footer-logo img {
+	  max-width: 200px;
+	  height: auto;
+	  margin: 0 auto;
+	  display: block;
+	}
+	#footer .inner {
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	  justify-content: center;
+	  text-align: center;
+	}		
+	#transformers-download {
+	  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+	  color: #fff;
+	  border-top: 2px solid #444;
+	  border-bottom: 2px solid #444;
+	}
 
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/jquery.scrollex.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
+	#transformers-download h2 {
+	  font-size: 2em;
+	  margin-bottom: 0.3em;
+	  text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+	}
 
- <!-- Page JS: image zoom + FAQ -->
-  <script>
-  (function () {
-    // Image zoom modal
-    document.addEventListener('DOMContentLoaded', () => {
-      const modal = document.getElementById('imgModal');
-      const modalImg = document.getElementById('imgModalContent');
-      const closeBtn = modal.querySelector('.img-close');
+	#transformers-download p {
+	  margin-bottom: 1em;
+	  font-size: 1.1em;
+	  color: #e0e0e0;
+	}
 
-      document.querySelectorAll('.tiles img').forEach(img => {
-        img.addEventListener('click', () => {
-          modalImg.src = img.src;
-          modalImg.alt = img.alt || '';
-          modal.style.display = 'block';
-          modal.setAttribute('aria-hidden', 'false');
-          // prevent page scroll behind modal
-          document.body.style.overflow = 'hidden';
-        });
-      });
+	#transformers-download .button.primary {
+	  background-color: #ff4040;
+	  border: none;
+	  color: #fff;
+	  padding: 0.8em 2em;
+	  border-radius: 8px;
+	  font-weight: bold;
+	  transition: background 0.3s;
+	  text-decoration: none;
+	}
+	#transformers-download .button.primary:hover {
+	  background-color: #ff6666;
+	}
 
-      closeBtn.addEventListener('click', () => {
-        modal.style.display = 'none';
-        modal.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-        modalImg.src = '';
-      });
+	/* Transformers Gallery Section */
+	#transformers-gallery {
+	  background-color: #111;
+	  color: #fff;
+	  border-top: 2px solid #333;
+	  border-bottom: 2px solid #333;
+	}
 
-      // click outside image closes modal
-      modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-          closeBtn.click();
-        }
-      });
+	#transformers-gallery h2 {
+	  font-size: 2em;
+	  margin-bottom: 1em;
+	  text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+	}
 
-      // Esc to close
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal.style.display === 'block') {
-          closeBtn.click();
-        }
-      });
-    });
+	.gallery {
+	  display: grid;
+	  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	  gap: 15px;
+	  justify-items: center;
+	  align-items: center;
+	}
 
-    // FAQ toggle
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('.faq-question').forEach(button => {
-        button.addEventListener('click', () => {
-          const answer = button.nextElementSibling;
-          document.querySelectorAll('.faq-answer').forEach(a => {
-            if (a !== answer) a.classList.remove('open');
-          });
-          answer.classList.toggle('open');
-        });
-      });
-    });
-  })();
-  </script>
+	.gallery img {
+	  width: 100%;
+	  max-width: 300px;
+	  height: auto;
+	  border-radius: 10px;
+	  box-shadow: 0 0 10px rgba(255,255,255,0.2);
+	  transition: transform 0.3s, box-shadow 0.3s;
+	}
 
-</body>
+	.gallery img:hover {
+	  transform: scale(1.05);
+	  box-shadow: 0 0 15px rgba(255,255,255,0.5);
+	}
+
+	/* Image Zoom Modal */
+	.img-modal {
+	  display: none;
+	  position: fixed;
+	  z-index: 9999;
+	  padding-top: 60px;
+	  left: 0;
+	  top: 0;
+	  width: 100%;
+	  height: 100%;
+	  overflow: auto;
+	  background-color: rgba(0,0,0,0.9);
+	}
+
+	.img-modal-content {
+	  margin: auto;
+	  display: block;
+	  max-width: 90%;
+	  max-height: 90%;
+	  border-radius: 10px;
+	  box-shadow: 0 0 20px rgba(255,255,255,0.3);
+	}
+
+	.img-close {
+	  position: absolute;
+	  top: 20px;
+	  right: 40px;
+	  color: #fff;
+	  font-size: 50px;
+	  font-weight: bold;
+	  cursor: pointer;
+	  transition: 0.2s;
+	}
+
+	.img-close:hover {
+	  color: #ff5050;
+	}
+
+
+	</style>	
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="symbol">
+										<img src="images/logo.svg" alt="" style="width: 100px; height: auto;" />
+									</span>
+									<span class="title">Next Step Edu</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+										
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="forteachers.html">Teacher Zone</a></li>
+							<li><a href="forlearners.html">Learner Zone</a></li>
+							<li><a href="fordevelopment.html">Development Zone</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+				<section id="transformers-download" class="wrapper style2">
+				  <div class="inner" style="text-align:center; padding: 2em;">
+					<h2>LingoLand</h2>
+					<p>Engage your learners with an interactive whiteboard</p>
+					<p>Interactive Collaboration</p>
+					<p>Work together in real time! Tutors and learners can draw, write, and solve challenges on a shared whiteboard — wherever they are in the world.</p>
+					<p>Explore language learning like never before! Navigate planets and solar systems while uncovering new words and concepts in a fun, visual way.</p>
+					<p>Spin to win! The interactive wheel adds excitement to learning, turning every question into a game of chance and discovery.</p>
+					<p>Boost memory and vocabulary with dynamic flashcards. Test knowledge, practice recall, and make learning quick, effective, and fun.</p>		
+				  </div>
+				</section>		
+
+				<!-- Image Gallery -->
+				<section id="transformers-gallery" class="wrapper style1">
+				  <div class="inner" style="text-align:center; padding: 2em;">
+					<h2>Game Screenshots</h2>
+					<div class="gallery">
+					  <img src="images/lingoland-4.png" alt="Gameplay 1">
+					  <img src="images/lingoland-2.png" alt="Gameplay 2">
+					  <img src="images/lingoland-3.png" alt="Gameplay 3">
+					  <img src="images/lingoland-1.png" alt="Gameplay 4">
+					</div>
+				  </div>
+				</section>
+
+				<!-- Footer -->
+				<footer id="footer">
+				  <div class="inner">
+					<div class="footer-logo">
+						<img src="images/footer-logo.png" alt="Footer Logo">
+					</div>
+					<ul class="copyright">
+					  <li>&copy; 2025 Next Step Edu</li>
+					  <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+					  <li>All content and applications are &copy; Next Step Edu. All rights reserved.</li>
+					</ul>
+				  </div>
+				</footer>
+			  
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+		<!-- Image Zoom Modal Script -->
+		<script>
+		document.addEventListener("DOMContentLoaded", () => {
+			const modal = document.getElementById("imgModal");
+			const modalImg = document.getElementById("imgModalContent");
+			const closeBtn = document.querySelector(".img-close");
+
+			// Attach click event to every gallery image
+			document.querySelectorAll(".gallery img").forEach(img => {
+				img.addEventListener("click", () => {
+					modal.style.display = "block";
+					modalImg.src = img.src;
+				});
+			});
+
+			// Close modal when X is clicked
+			closeBtn.onclick = () => {
+				modal.style.display = "none";
+			};
+
+			// Close modal if clicking outside the image
+			modal.onclick = (e) => {
+				if (e.target === modal) modal.style.display = "none";
+			};
+		});
+		</script>
+
+		<!-- Image Zoom Modal -->
+		<div id="imgModal" class="img-modal">
+			<span class="img-close">&times;</span>
+			<img class="img-modal-content" id="imgModalContent">
+		</div>
+
+
+
+	</body>
 </html>
