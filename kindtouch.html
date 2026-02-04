@@ -18,6 +18,21 @@
 	  font-size: 2.5em;
 	  color: #ffffff;
 	}
+	
+	.caregiver-button {
+	  padding: 0.75em 1.25em;
+	  font-size: 1em;
+	  min-height: 44px; /* Apple & Android touch guideline */
+	  border-radius: 8px;
+	}
+
+	/* Make it easier to tap on small screens */
+	@media (max-width: 736px) {
+	  .caregiver-button {
+		width: 100%;
+		font-size: 1.1em;
+	  }
+	}	
 	</style>	
 	</head>
 	<body class="is-preload">
@@ -45,9 +60,9 @@
 								</a>
 
 							<div style="margin-bottom: 1em; text-align: right;">
-							  <button onclick="openCaregiverGuide()" class="primary">
-								Caregiver Guide
-							  </button>
+								<button onclick="openCaregiverGuide()" class="primary caregiver-button">
+								  Caregiver Guide
+								</button>
 							</div>
 
 							<!-- Nav -->
@@ -71,21 +86,25 @@
 						</ul>
 					</nav>
 
-		<!-- Main Content -->
-			<section id="main" class="wrapper">
-			  <div class="inner">
-				<h2>KindTouch</h2>
+				<!-- Main Content -->
+				<section id="main" class="wrapper">
+				  <div class="inner" style="text-align: center;">
+					<h2>KindTouch</h2>
 
-				<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-				  <iframe 
-					src="https://kindtouch.netlify.app"
-					style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" 
-					allowfullscreen>
-				  </iframe>
-				</div>
+					<p style="font-size: 1.1em; margin-bottom: 1.5em;">
+					  Open KindTouch in full-screen mode for the best experience.
+					</p>
 
-			  </div>
-			</section>
+					<a href="https://kindtouch.netlify.app"
+					   class="button primary"
+					   target="_blank"
+					   rel="noopener"
+					   style="font-size: 1.2em; padding: 0.75em 1.5em;">
+					  Launch KindTouch
+					</a>
+				  </div>
+				</section>
+
 
 	  </div>
 
