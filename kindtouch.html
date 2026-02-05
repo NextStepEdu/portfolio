@@ -133,6 +133,49 @@
 			window.open("caretaker.html", "_blank");
 		  }
 		</script>
+
+		<!-- PWA update notification -->
+		<script>
+		if ('serviceWorker' in navigator) {
+		  navigator.serviceWorker.addEventListener('controllerchange', function () {
+			showUpdateBanner();
+		  });
+		}
+
+		function showUpdateBanner() {
+		  const banner = document.createElement('div');
+		  banner.innerHTML = `
+			<div style="
+			  position: fixed;
+			  bottom: 16px;
+			  left: 50%;
+			  transform: translateX(-50%);
+			  background: #222;
+			  color: white;
+			  padding: 12px 16px;
+			  border-radius: 10px;
+			  font-size: 0.95em;
+			  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+			  z-index: 9999;
+			">
+			  A new version is available.
+			  <button style="
+				margin-left: 10px;
+				padding: 6px 10px;
+				border: none;
+				border-radius: 6px;
+				background: #4CAF50;
+				color: white;
+				font-weight: bold;
+			  " onclick="location.reload()">
+				Refresh
+			  </button>
+			</div>
+		  `;
+		  document.body.appendChild(banner);
+		}
+		</script>
+
 	  
 	</body>
 
