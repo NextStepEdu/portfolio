@@ -43,6 +43,211 @@
 	  align-items: center;
 	  justify-content: center;
 	  text-align: center;
+	}
+
+	/* === TILE WOW EFFECT === */
+
+	.tiles article {
+	  transition: transform 0.35s ease, box-shadow 0.35s ease;
+	  transform-style: preserve-3d;
+	  will-change: transform;
+	  position: relative;
+	  overflow: hidden;
+	  border-radius: 12px;
+	}
+
+	/* Lift + shadow */
+	.tiles article:hover {
+	  box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+	}
+
+	.tiles article {
+	  background: rgba(255,255,255,0.05);
+	  backdrop-filter: blur(6px);
+	}
+
+	/* Smooth inner content */
+	.tiles article * {
+	  pointer-events: none;
+	}
+
+	.tiles article a {
+	  pointer-events: auto;
+	}
+
+	/* Ripple effect */
+	.tiles article::after {
+	  content: "";
+	  position: absolute;
+	  width: 0;
+	  height: 0;
+	  background: rgba(255,255,255,0.3);
+	  border-radius: 50%;
+	  transform: translate(-50%, -50%);
+	  opacity: 0;
+	}
+	
+	.tiles article::after {
+	  left: var(--ripple-x, 50%);
+	  top: var(--ripple-y, 50%);
+	}
+	
+	.tiles article .image img {
+	  transition: transform 0.4s ease;
+	}
+
+	.tiles article:hover .image img {
+	  transform: scale(1.1);
+	}	
+
+	.tiles article.ripple::after {
+	  animation: rippleEffect 0.6s ease-out;
+	}
+
+	@keyframes rippleEffect {
+	  0% {
+		width: 0;
+		height: 0;
+		opacity: 0.6;
+	  }
+	  100% {
+		width: 400px;
+		height: 400px;
+		opacity: 0;
+	  }
+	}
+
+	.faq-item {
+	  margin-bottom: 1.5em;
+	  word-wrap: break-word;
+	}
+
+	.faq-question {
+	  width: 100%;
+	  background: #f0f0f0;
+	  color: #333;
+	  padding: 1em;
+	  font-size: 0.7em;
+	  border: none;
+	  border-radius: 6px;
+	  text-align: left;
+	  cursor: pointer;
+	  transition: background 0.3s ease;
+	  word-wrap: break-word;
+	  white-space: normal;
+	  line-height: 1.5;
+	}
+
+	.faq-question:hover {
+	  background: #e0e0e0;
+	}
+
+	.faq-answer {
+	  max-height: 0;
+	  overflow: hidden;
+	  opacity: 0;
+	  transition: all 0.4s ease;
+	  padding: 0 1em;
+	  background: #fdfdfd;
+	  border-left: 4px solid #f2849e;
+	  border-radius: 4px;
+	  margin-top: 0.3em;
+	  color: black;
+	  font-size: 0.7em;
+	}
+	.faq-answer.open {
+	  max-height: 500px; /* high enough to fit most answers */
+	  opacity: 1;
+	  padding: 1em;
+	}
+	
+	/* Cookie Info Banner */
+	.cookie-notice {
+	  position: fixed;
+	  bottom: 20px;
+	  left: 20px;
+	  right: 20px;
+	  max-width: 400px;
+	  margin: auto;
+	  background: #333;
+	  color: #fff;
+	  padding: 1em;
+	  border-radius: 6px;
+	  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+	  font-size: 0.9em;
+	  z-index: 9999;
+	  display: none;
+	}
+	.cookie-notice p {
+	  margin: 0 0 0.5em 0;
+	}
+	.cookie-notice button {
+	  background: #007acc;
+	  color: #fff;
+	  border: none;
+	  padding: 0.5em 1em;
+	  border-radius: 4px;
+	  cursor: pointer;
+	  font-size: 0.85em;
+	}
+	.cookie-notice button:hover {
+	  background: #005fa3;
+	}	
+
+	/* 3D Text Effect for Titles */
+	h1, h2, h3 {
+	  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+	}
+
+	.site-title {
+	  text-align: center;
+	  margin-top: 0.5em;
+	  font-size: 2.5em;
+	  color: #ffffff;
+	}
+
+	.faq-item {
+	  margin-bottom: 1.5em;
+	  word-wrap: break-word;
+	}
+
+	.faq-question {
+	  width: 100%;
+	  background: #f0f0f0;
+	  color: #333;
+	  padding: 1em;
+	  font-size: 0.7em;
+	  border: none;
+	  border-radius: 6px;
+	  text-align: left;
+	  cursor: pointer;
+	  transition: background 0.3s ease;
+	  word-wrap: break-word;
+	  white-space: normal;
+	  line-height: 1.5;
+	}
+
+	.faq-question:hover {
+	  background: #e0e0e0;
+	}
+
+	.faq-answer {
+	  max-height: 0;
+	  overflow: hidden;
+	  opacity: 0;
+	  transition: all 0.4s ease;
+	  padding: 0 1em;
+	  background: #fdfdfd;
+	  border-left: 4px solid #f2849e;
+	  border-radius: 4px;
+	  margin-top: 0.3em;
+	  color: black;
+	  font-size: 0.7em;
+	}
+	.faq-answer.open {
+	  max-height: 500px; /* high enough to fit most answers */
+	  opacity: 1;
+	  padding: 1em;
 	}	
 	
 	</style>	
@@ -78,6 +283,7 @@
 						<h2>Menu</h2>
 						<ul>
 							<li><a href="index.html">Home</a></li>
+							<li><a href="mvpconnect.html">MVP Connect</a></li>							
 							<li><a href="forlearners.html">Learner Zone</a></li>
 							<li><a href="fordevelopment.html">Development Zone</a></li>
 							<li><a href="forgames.html">Game Zone</a></li>								
@@ -114,6 +320,59 @@
 						</div>
 					</div>
 
+				<!-- FAQ Section -->
+				<div class="faq-section">
+				  <h2>Frequently Asked Questions</h2>
+				  <div class="faq-item">
+					<button class="faq-question">Who are these apps for?</button>
+					<div class="faq-answer">Our apps are for teachers and learners.</div>
+				  </div>
+				  <div class="faq-item">
+					<button class="faq-question">Is the internet required?</button>
+					<div class="faq-answer">Yes. You will need a stable internet connection.</div>
+				  </div>
+				  <div class="faq-item">
+					<button class="faq-question">How many students can join?</button>
+					<div class="faq-answer">Lingoland is designed for one-on-one interaction.</div>
+				  </div>
+				  <div class="faq-item">
+					<button class="faq-question">What devices are supported?</button>
+					<div class="faq-answer">Next Step software works on Windows and Mac. Touchscreen support is also included in some cases.</div>
+				  </div>
+				  <div class="faq-item">
+					<button class="faq-question">What client software is needed?</button>
+					<div class="faq-answer">Students need the client version for the app using either Windows or Mac.</div>
+				  </div>
+					<div class="faq-item">
+					<button class="faq-question">Can my clients play solo?</button>
+					<div class="faq-answer">No. Your students need you to share a join code to initiate the lesson.</div>
+				  </div>
+					<div class="faq-item">
+					<button class="faq-question">Do I get a trial?</button>
+					<div class="faq-answer">Yes. You can test the software alone or with students. If you like it, purchase a tier to unlock login attempts.</div>
+				  </div>		  
+					<div class="faq-item">
+					<button class="faq-question">Are materials / clients provided?</button>
+					<div class="faq-answer">No. Materials are created and uploaded at runtime by the user (teacher) and clients are based on the teacher’s existing clientele base.</div>
+				  </div>
+					<div class="faq-item">
+					<button class="faq-question">Are discounts available?</button>
+					<div class="faq-answer">If you decide to extend login attempts after completion, a discount will be discussed.</div>
+				  </div>
+					<div class="faq-item">
+					<button class="faq-question">How are accounts created?</button>
+					<div class="faq-answer">Users purchase a tier and are provided with a login and password.</div>
+				  </div>
+					<div class="faq-item">
+					<button class="faq-question">What tiers are available?</button>
+					<div class="faq-answer">There are three tiers. The lower tier has fewer login attempts while the highest tier has more.</div>
+				  </div>
+					<div class="faq-item">
+					<button class="faq-question">How much does it cost?</button>
+					<div class="faq-answer">Contact us for more information, and we’ll gladly discuss it further.</div>
+				  </div>
+				</div>
+
 				<!-- Footer -->
 				<footer id="footer">
 				  <div class="inner">
@@ -137,7 +396,71 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
-			<script>  
+			<script>
+			  // FAQ toggle with animation
+			  document.querySelectorAll('.faq-question').forEach(button => {
+				button.addEventListener('click', () => {
+				  const answer = button.nextElementSibling;
+
+				  document.querySelectorAll('.faq-answer').forEach(a => {
+					if (a !== answer) a.classList.remove('open');
+				  });
+
+				  answer.classList.toggle('open');
+				});
+			  });
+			</script>
+			
+			<script>
+			// === TILE INTERACTION ===
+
+			document.querySelectorAll('.tiles article').forEach(tile => {
+
+			  tile.addEventListener('mousemove', (e) => {
+				const rect = tile.getBoundingClientRect();
+				const x = e.clientX - rect.left;
+				const y = e.clientY - rect.top;
+
+				const centerX = rect.width / 2;
+				const centerY = rect.height / 2;
+
+				const rotateX = -(y - centerY) / 12;
+				const rotateY = (x - centerX) / 12;
+
+				tile.style.transform = `
+				  perspective(800px)
+				  rotateX(${rotateX}deg)
+				  rotateY(${rotateY}deg)
+				  scale(1.03)
+				`;
+			  });
+
+			  tile.addEventListener('mouseleave', () => {
+				tile.style.transform = `
+				  perspective(800px)
+				  rotateX(0deg)
+				  rotateY(0deg)
+				  scale(1)
+				`;
+			  });
+
+			  // Ripple click effect
+			  tile.addEventListener('click', (e) => {
+				const rect = tile.getBoundingClientRect();
+				const ripple = tile;
+
+				const x = e.clientX - rect.left;
+				const y = e.clientY - rect.top;
+
+				ripple.style.setProperty('--ripple-x', `${x}px`);
+				ripple.style.setProperty('--ripple-y', `${y}px`);
+
+				ripple.classList.remove('ripple');
+				void ripple.offsetWidth; // restart animation
+				ripple.classList.add('ripple');
+			  });
+
+			});
 			</script>
 
 	</body>
