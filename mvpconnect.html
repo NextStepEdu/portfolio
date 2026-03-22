@@ -63,6 +63,105 @@
 		font-size: 1.1em;
 	  }
 	}	
+	
+	/* FAQ Accordion - Improved */
+	.faq-section {
+	  margin-top: 3em;
+	  padding: 0 1em;
+	  max-width: 800px;
+	  margin-left: auto;
+	  margin-right: auto;
+	}
+
+	.faq-item {
+	  margin-bottom: 1.5em;
+	  word-wrap: break-word;
+	}
+
+	.faq-question {
+	  width: 100%;
+	  background: #f0f0f0;
+	  color: #333;
+	  padding: 1em;
+	  font-size: 0.7em;
+	  border: none;
+	  border-radius: 6px;
+	  text-align: left;
+	  cursor: pointer;
+	  transition: background 0.3s ease;
+	  word-wrap: break-word;
+	  white-space: normal;
+	  line-height: 1.5;
+	}
+
+	.faq-question:hover {
+	  background: #e0e0e0;
+	}
+
+	.faq-answer {
+	  max-height: 0;
+	  overflow: hidden;
+	  opacity: 0;
+	  transition: all 0.4s ease;
+	  padding: 0 1em;
+	  background: #fdfdfd;
+	  border-left: 4px solid #f2849e;
+	  border-radius: 4px;
+	  margin-top: 0.3em;
+	  color: black;
+	  font-size: 0.7em;
+	}
+	.faq-answer.open {
+	  max-height: 500px; /* high enough to fit most answers */
+	  opacity: 1;
+	  padding: 1em;
+	}
+
+	.faq-item {
+	  margin-bottom: 1.5em;
+	  word-wrap: break-word;
+	}
+
+	.faq-question {
+	  width: 100%;
+	  background: #f0f0f0;
+	  color: #333;
+	  padding: 1em;
+	  font-size: 0.7em;
+	  border: none;
+	  border-radius: 6px;
+	  text-align: left;
+	  cursor: pointer;
+	  transition: background 0.3s ease;
+	  word-wrap: break-word;
+	  white-space: normal;
+	  line-height: 1.5;
+	}
+
+	.faq-question:hover {
+	  background: #e0e0e0;
+	}
+
+	.faq-answer {
+	  max-height: 0;
+	  overflow: hidden;
+	  opacity: 0;
+	  transition: all 0.4s ease;
+	  padding: 0 1em;
+	  background: #fdfdfd;
+	  border-left: 4px solid #f2849e;
+	  border-radius: 4px;
+	  margin-top: 0.3em;
+	  color: black;
+	  font-size: 0.7em;
+	}
+	.faq-answer.open {
+	  max-height: 500px; /* high enough to fit most answers */
+	  opacity: 1;
+	  padding: 1em;
+	}	
+
+
 	</style>	
 	</head>
 	<body class="is-preload">
@@ -183,7 +282,32 @@
 				  </div>
 				</section>
 
-	  </div>
+			</div>
+
+				<!-- FAQ Section -->
+				<div class="faq-section">
+				  <h2>Frequently Asked Questions</h2>
+				  <div class="faq-item">
+					<button class="faq-question">Who this app for?</button>
+					<div class="faq-answer">MVP Connect is for teachers, learners, caregivers, patients, and parents.</div>
+				  </div>
+				  <div class="faq-item">
+					<button class="faq-question">Is the internet required?</button>
+					<div class="faq-answer">Yes. You will need an internet connection.</div>
+				  </div>
+				  <div class="faq-item">
+					<button class="faq-question">What devices are supported?</button>
+					<div class="faq-answer">This app works on any device which uses a browser.</div>
+				  </div>
+				  <div class="faq-item">
+					<button class="faq-question">How are accounts created?</button>
+					<div class="faq-answer">No accounts are created.</div>
+				  </div>
+				  <div class="faq-item">
+					<button class="faq-question">How much does it cost?</button>
+					<div class="faq-answer">This app is completely free. A donation would be helpful</div>
+				  </div>
+				</div>
 	  
 	  				<!-- Footer -->
 				<footer id="footer">
@@ -250,6 +374,20 @@
 		}
 		</script>
 
+			<script>
+			  // FAQ toggle with animation
+			  document.querySelectorAll('.faq-question').forEach(button => {
+				button.addEventListener('click', () => {
+				  const answer = button.nextElementSibling;
+
+				  document.querySelectorAll('.faq-answer').forEach(a => {
+					if (a !== answer) a.classList.remove('open');
+				  });
+
+				  answer.classList.toggle('open');
+				});
+			  });
+			</script>
 	  
 	</body>
 
