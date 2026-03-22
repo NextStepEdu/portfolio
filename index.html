@@ -16,6 +16,78 @@
 	  margin-left: auto;
 	  margin-right: auto;
 	}
+	
+	/* === TILE WOW EFFECT === */
+
+	.tiles article {
+	  transition: transform 0.35s ease, box-shadow 0.35s ease;
+	  transform-style: preserve-3d;
+	  will-change: transform;
+	  position: relative;
+	  overflow: hidden;
+	  border-radius: 12px;
+	}
+
+	/* Lift + shadow */
+	.tiles article:hover {
+	  box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+	}
+
+	.tiles article {
+	  background: rgba(255,255,255,0.05);
+	  backdrop-filter: blur(6px);
+	}
+
+	/* Smooth inner content */
+	.tiles article * {
+	  pointer-events: none;
+	}
+
+	.tiles article a {
+	  pointer-events: auto;
+	}
+
+	/* Ripple effect */
+	.tiles article::after {
+	  content: "";
+	  position: absolute;
+	  width: 0;
+	  height: 0;
+	  background: rgba(255,255,255,0.3);
+	  border-radius: 50%;
+	  transform: translate(-50%, -50%);
+	  opacity: 0;
+	}
+	
+	.tiles article::after {
+	  left: var(--ripple-x, 50%);
+	  top: var(--ripple-y, 50%);
+	}
+	
+	.tiles article .image img {
+	  transition: transform 0.4s ease;
+	}
+
+	.tiles article:hover .image img {
+	  transform: scale(1.1);
+	}	
+
+	.tiles article.ripple::after {
+	  animation: rippleEffect 0.6s ease-out;
+	}
+
+	@keyframes rippleEffect {
+	  0% {
+		width: 0;
+		height: 0;
+		opacity: 0.6;
+	  }
+	  100% {
+		width: 400px;
+		height: 400px;
+		opacity: 0;
+	  }
+	}
 
 	.faq-item {
 	  margin-bottom: 1.5em;
@@ -433,6 +505,56 @@
 				  });
 				});			  
 			</script>
+			<script>
+			// === TILE INTERACTION ===
 
+			document.querySelectorAll('.tiles article').forEach(tile => {
+
+			  tile.addEventListener('mousemove', (e) => {
+				const rect = tile.getBoundingClientRect();
+				const x = e.clientX - rect.left;
+				const y = e.clientY - rect.top;
+
+				const centerX = rect.width / 2;
+				const centerY = rect.height / 2;
+
+				const rotateX = -(y - centerY) / 12;
+				const rotateY = (x - centerX) / 12;
+
+				tile.style.transform = `
+				  perspective(800px)
+				  rotateX(${rotateX}deg)
+				  rotateY(${rotateY}deg)
+				  scale(1.03)
+				`;
+			  });
+
+			  tile.addEventListener('mouseleave', () => {
+				tile.style.transform = `
+				  perspective(800px)
+				  rotateX(0deg)
+				  rotateY(0deg)
+				  scale(1)
+				`;
+			  });
+
+			  // Ripple click effect
+			  tile.addEventListener('click', (e) => {
+				const rect = tile.getBoundingClientRect();
+				const ripple = tile;
+
+				const x = e.clientX - rect.left;
+				const y = e.clientY - rect.top;
+
+				ripple.style.setProperty('--ripple-x', `${x}px`);
+				ripple.style.setProperty('--ripple-y', `${y}px`);
+
+				ripple.classList.remove('ripple');
+				void ripple.offsetWidth; // restart animation
+				ripple.classList.add('ripple');
+			  });
+
+			});
+			</script>
 	</body>
 </html>
