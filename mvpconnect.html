@@ -187,6 +187,49 @@
 	.memory-card.playing {
 	  box-shadow: 0 0 20px rgba(255,255,255,0.6);
 	}
+	
+	.memory-demo {
+	  position: relative;
+	  max-width: 500px;
+	}
+
+	.memory-demo img {
+	  width: 100%;
+	  border-radius: 12px;
+	  display: block;
+	}
+
+	/* Play button (top-right) */
+	.play-button {
+	  position: absolute;
+	  top: 10px;
+	  right: 10px;
+	  background: rgba(0,0,0,0.6);
+	  color: white;
+	  padding: 8px 12px;
+	  border-radius: 8px;
+	  cursor: pointer;
+	  font-size: 1.2em;
+	}
+
+	/* Text overlay */
+	.text-overlay {
+	  position: absolute;
+	  bottom: 20px;
+	  left: 20px;
+	  right: 20px;
+	  background: rgba(0,0,0,0.7);
+	  color: white;
+	  padding: 10px;
+	  border-radius: 8px;
+	  opacity: 0;
+	  transition: opacity 0.3s ease;
+	}
+
+	/* When visible */
+	.text-overlay.show {
+	  opacity: 1;
+	}	
 
 	</style>	
 	</head>
@@ -286,14 +329,23 @@
 
 						<div style="display:flex; gap:1em; justify-content:center; flex-wrap:wrap;">
 
-							<div class="memory-card" data-audio="audio/audio1.mp3">
-							  <img src="images/sample1.jpg" style="width:120px; border-radius:10px;">
-							  <p>Grandma’s Garden</p>
-							</div>
+							<div style="display:flex; justify-content:center;">
 
-							<div class="memory-card" data-audio="audio/audio2.mp3">
-							  <img src="images/sample2.jpg" style="width:120px; border-radius:10px;">
-							  <p>First Day of School</p>
+							  <div class="memory-demo">
+
+								<!-- IMAGE -->
+								<img src="images/sample1.jpg" id="mainImage">
+
+								<!-- PLAY BUTTON -->
+								<div class="play-button" id="playBtn">▶</div>
+
+								<!-- TEXT OVERLAY -->
+								<div class="text-overlay" id="textBox">
+								  This is my desk.
+								</div>
+
+							  </div>
+
 							</div>
 
 						</div>
@@ -447,40 +499,22 @@
 			</script>
 			
 			<script>
-				let currentAudio = null;
+			  const playBtn = document.getElementById("playBtn");
+			  const textBox = document.getElementById("textBox");
+			  const image = document.getElementById("mainImage");
 
-				document.querySelectorAll('.memory-card').forEach(card => {
-				  card.addEventListener('click', () => {
+			  let audio = new Audio("audio/audio1.mp3");
 
-					// remove playing from all cards
-					document.querySelectorAll('.memory-card').forEach(c => c.classList.remove('playing'));
-
-					// add to current card
-					card.classList.add('playing');
-
-					if (currentAudio) {
-					  currentAudio.pause();
-					  currentAudio.currentTime = 0;
-					}
-
-					const audioSrc = card.getAttribute('data-audio');
-					currentAudio = new Audio(audioSrc);
-					currentAudio.play();
-
-				// visual feedback
-				card.style.transform = "scale(1.05)";
-				setTimeout(() => {
-				  card.style.transform = "scale(1)";
-				}, 200);
-
-				// background effect
-				document.body.classList.add('memory-active');
-				setTimeout(() => {
-				  document.body.classList.remove('memory-active');
-				}, 3000);
-
+			  // PLAY AUDIO
+			  playBtn.addEventListener("click", () => {
+				audio.currentTime = 0;
+				audio.play();
 			  });
-			});
+
+			  // TOGGLE TEXT
+			  image.addEventListener("click", () => {
+				textBox.classList.toggle("show");
+			  });
 			</script>
 	  
 	</body>
