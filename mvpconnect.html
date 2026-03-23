@@ -296,6 +296,69 @@
 	#main {
 	  padding-bottom: 0; /* remove extra space under header section */
 	}	
+	
+	/* TAP ZONES */
+	.tap-zone {
+	  position: absolute;
+	  z-index: 25;
+	}
+
+	/* Left / Right navigation (bottom half only) */
+	.tap-zone.left {
+	  left: 0;
+	  bottom: 0;
+	  width: 50%;
+	  height: 50%;
+	}
+
+	.tap-zone.right {
+	  right: 0;
+	  bottom: 0;
+	  width: 50%;
+	  height: 50%;
+	}
+
+	/* Top-left long press */
+	.tap-zone.top-left {
+	  top: 0;
+	  left: 0;
+	  width: 30%;
+	  height: 30%;
+	}
+
+	/* Optional debug (turn on if needed) */
+	/*
+	.tap-zone { background: rgba(0,255,0,0.1); }
+	*/
+
+	/* EDITOR OVERLAY */
+	.editor-overlay {
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  height: 100%;
+
+	  background: white;
+	  color: black;
+
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+
+	  font-size: 1.5em;
+	  font-weight: bold;
+
+	  opacity: 0;
+	  pointer-events: none;
+
+	  transition: opacity 0.3s ease;
+	  z-index: 50;
+	}
+
+	.editor-overlay.show {
+	  opacity: 1;
+	}	
 
 	</style>	
 	</head>
@@ -387,7 +450,6 @@
 
 				<section class="wrapper style1">
 				  <div class="inner" style="text-align:center;">
-
 					<p style="font-size: 1.1em; margin-bottom: 1em;">
 					  Tap this memory to hear it
 					</p>
@@ -417,6 +479,33 @@
 							</div>
 
 						</div>
+						
+					<p style="font-size: 1.1em; margin-top: 2em;">
+					  Try the controls
+					</p>
+
+					<div style="display:flex; justify-content:center; margin-top:1em;">
+					  <div class="memory-demo" id="controlDemo">
+
+						<!-- IMAGE -->
+						<img id="demoImage" src="images/sample1.jpg">
+
+						<!-- INVISIBLE TAP ZONES -->
+						<div class="tap-zone left"></div>
+						<div class="tap-zone right"></div>
+						<div class="tap-zone top-left" id="editorTrigger"></div>
+
+						<!-- EDITOR OVERLAY -->
+						<div class="editor-overlay" id="editorOverlay">
+						  Editor Mode
+						</div>
+
+					  </div>
+					</div>	
+					
+					<p style="font-size: 0.8em; opacity: 0.6;">
+					  Tap left/right to change photos • Hold top-left to edit
+					</p>
 
 					<p style="font-size: 0.75em; opacity: 0.5; margin-top: 1em;">
 					  Media credits: Victor Salazar (image), freesound_community (audio) – Pixabay
@@ -598,6 +687,66 @@
 				  }, 3000);
 				});
 			  });
+			</script>
+
+			<script>
+			  const images = [
+				"images/sample1.jpg",
+				"images/sample2.jpg",
+				"images/sample3.jpg"
+			  ];
+
+			  let currentIndex = 0;
+
+			  const demoImage = document.getElementById("demoImage");
+			  const leftZone = document.querySelector("#controlDemo .left");
+			  const rightZone = document.querySelector("#controlDemo .right");
+
+			  const editorTrigger = document.getElementById("editorTrigger");
+			  const editorOverlay = document.getElementById("editorOverlay");
+
+			  // --- IMAGE NAVIGATION ---
+			  function showImage(index) {
+				demoImage.src = images[index];
+			  }
+
+			  leftZone.addEventListener("click", () => {
+				currentIndex = (currentIndex - 1 + images.length) % images.length;
+				showImage(currentIndex);
+			  });
+
+			  rightZone.addEventListener("click", () => {
+				currentIndex = (currentIndex + 1) % images.length;
+				showImage(currentIndex);
+			  });
+
+			  // --- LONG PRESS (EDITOR MODE) ---
+			  let pressTimer;
+
+			  editorTrigger.addEventListener("mousedown", startPress);
+			  editorTrigger.addEventListener("touchstart", startPress);
+
+			  editorTrigger.addEventListener("mouseup", cancelPress);
+			  editorTrigger.addEventListener("mouseleave", cancelPress);
+			  editorTrigger.addEventListener("touchend", cancelPress);
+
+			  function startPress() {
+				pressTimer = setTimeout(() => {
+				  showEditor();
+				}, 800); // long press duration
+			  }
+
+			  function cancelPress() {
+				clearTimeout(pressTimer);
+			  }
+
+			  function showEditor() {
+				editorOverlay.classList.add("show");
+
+				setTimeout(() => {
+				  editorOverlay.classList.remove("show");
+				}, 5000);
+			  }
 			</script>
 	  
 	</body>
