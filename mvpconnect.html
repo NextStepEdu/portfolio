@@ -197,6 +197,8 @@
 	  width: 100%;
 	  border-radius: 12px;
 	  display: block;
+	  position: relative;
+	  z-index: 1;
 	}
 
 	/* Play button (top-right) */
@@ -239,7 +241,7 @@
 	  background: #ff4d6d;
 	  border-radius: 50%;
 	  cursor: pointer;
-	  transform: translate(-50%, -50%);
+	  z-index: 10;
 	}
 
 	/* subtle pulse */
@@ -256,6 +258,22 @@
 	@keyframes pulse {
 	  0% { transform: scale(1); opacity: 1; }
 	  100% { transform: scale(2); opacity: 0; }
+	}	
+	
+	/* Launch button (default = desktop) */
+	.launch-btn {
+	  font-size: 1em;
+	  padding: 0.6em 1.2em;
+	  margin-bottom: 2em;
+	}
+
+	/* Mobile adjustments */
+	@media (max-width: 736px) {
+	  .launch-btn {
+		width: 100%;
+		font-size: 1.05em;
+		padding: 0.8em;
+	  }
 	}	
 
 	</style>	
@@ -367,8 +385,8 @@
 
 							  <!-- HOTSPOTS -->
 							  <div class="hotspot" style="top: 10%; left: 10%;" data-text="I liked looking out the window."></div>
-							  <div class="hotspot" style="bottom: 15%; left: 10%;" data-text="This was my desk."></div>
-							  <div class="hotspot" style="bottom: 15%; right: 10%;" data-text="This was Fred's chair."></div>
+								<div class="hotspot" style="bottom: 15%; left: 10%;" data-text="My favourite book."></div>
+								<div class="hotspot" style="bottom: 15%; right: 10%;" data-text="A gift from my daughter."></div>
 
 							  <!-- TEXT BOX -->
 							  <div class="text-overlay" id="textBox"></div>
@@ -397,10 +415,9 @@
 					  </p>
 					  
 					<a href="https://mvpconnect.netlify.app"
-					   class="button primary"
+					   class="button primary launch-btn"
 					   target="_blank"
-					   rel="noopener"
-					   style="font-size: 1.2em; padding: 0.75em 1.5em; margin-bottom: 2em;">
+					   rel="noopener">
 					  Start Creating Memories
 					</a>
 
