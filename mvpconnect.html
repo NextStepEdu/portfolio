@@ -161,6 +161,32 @@
 	  padding: 1em;
 	}	
 
+	.memory-card {
+	  cursor: pointer;
+	  transition: transform 0.2s ease;
+	  text-align: center;
+	}
+
+	.memory-card:hover {
+	  transform: scale(1.05);
+	}
+
+	body.memory-active {
+	  background: rgba(0,0,0,0.85);
+	  transition: background 0.5s ease;
+	}
+	
+	.memory-card:active {
+	  transform: scale(0.95);
+	}	
+	
+	.memory-card img {
+	  cursor: pointer;
+	}	
+
+	.memory-card.playing {
+	  box-shadow: 0 0 20px rgba(255,255,255,0.6);
+	}
 
 	</style>	
 	</head>
@@ -200,6 +226,14 @@
 					</nav>
 
 				<!-- Main -->
+				<div id="main">
+					<div class="inner">
+						<header>
+							<h1>MVP Connect - Your Memories</h1>
+						</header>
+					</div>
+				</div>				
+				
 				<section id="transformers-download" class="wrapper style2">
 				  <div class="inner" style="text-align:center; padding: 2em;">
 					<h2>Turn Photos Into Living Memories</h2>
@@ -243,6 +277,30 @@
 				  </div>
 				</section>	
 
+				<section class="wrapper style1">
+				  <div class="inner" style="text-align:center;">
+
+					<p style="font-size: 1.1em; margin-bottom: 1em;">
+					  Tap a memory to hear it
+					</p>
+
+						<div style="display:flex; gap:1em; justify-content:center; flex-wrap:wrap;">
+
+							<div class="memory-card" data-audio="audio1.mp3">
+							  <img src="images/sample1.jpg" style="width:120px; border-radius:10px;">
+							  <p>Grandma’s Garden</p>
+							</div>
+
+							<div class="memory-card" data-audio="audio2.mp3">
+							  <img src="images/sample2.jpg" style="width:120px; border-radius:10px;">
+							  <p>First Day of School</p>
+							</div>
+
+						</div>
+
+					</div>
+				</section>	
+
 				<!-- Main Content -->
 				<section id="main" class="wrapper">
 				  <div class="inner" style="text-align: center; max-width: 600px; margin: 0 auto;">
@@ -259,7 +317,7 @@
 					   target="_blank"
 					   rel="noopener"
 					   style="font-size: 1.2em; padding: 0.75em 1.5em; margin-bottom: 2em;">
-					  Launch MVP Connect
+					  Start Creating Memories
 					</a>
 
 					<!-- Add to Home Screen Instructions -->
@@ -386,6 +444,43 @@
 				  answer.classList.toggle('open');
 				});
 			  });
+			</script>
+			
+			<script>
+				let currentAudio = null;
+
+				document.querySelectorAll('.memory-card').forEach(card => {
+				  card.addEventListener('click', () => {
+
+					// remove playing from all cards
+					document.querySelectorAll('.memory-card').forEach(c => c.classList.remove('playing'));
+
+					// add to current card
+					card.classList.add('playing');
+
+					if (currentAudio) {
+					  currentAudio.pause();
+					  currentAudio.currentTime = 0;
+					}
+
+					const audioSrc = card.getAttribute('data-audio');
+					currentAudio = new Audio(audioSrc);
+					currentAudio.play();
+
+				// visual feedback
+				card.style.transform = "scale(1.05)";
+				setTimeout(() => {
+				  card.style.transform = "scale(1)";
+				}, 200);
+
+				// background effect
+				document.body.classList.add('memory-active');
+				setTimeout(() => {
+				  document.body.classList.remove('memory-active');
+				}, 3000);
+
+			  });
+			});
 			</script>
 	  
 	</body>
