@@ -269,11 +269,56 @@
 	  100% { transform: scale(2); opacity: 0; }
 	}	
 	
-	/* Launch button (default = desktop) */
 	.launch-btn {
-	  font-size: 1em;
-	  padding: 0.6em 1.2em;
+	  font-size: 1.2em;
+	  padding: 0.9em 1.8em;
 	  margin-bottom: 2em;
+
+	  background: linear-gradient(135deg, #ff4d6d, #ff7a18);
+	  color: white;
+	  border: none;
+	  border-radius: 12px;
+
+	  font-weight: bold;
+	  letter-spacing: 0.5px;
+
+	  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+	  transition: all 0.25s ease;
+
+	  position: relative;
+	}
+
+	/* Hover (desktop) */
+	.launch-btn:hover {
+	  transform: translateY(-2px) scale(1.03);
+	  box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+	}
+
+	/* Tap (mobile) */
+	.launch-btn:active {
+	  transform: scale(0.97);
+	}
+
+	/* Subtle pulse animation */
+	.launch-btn::after {
+	  content: "";
+	  position: absolute;
+	  inset: 0;
+	  border-radius: 12px;
+	  box-shadow: 0 0 0 rgba(255,77,109,0.6);
+	  animation: pulseBtn 2s infinite;
+	}
+
+	@keyframes pulseBtn {
+	  0% {
+		box-shadow: 0 0 0 0 rgba(255,77,109,0.5);
+	  }
+	  70% {
+		box-shadow: 0 0 0 12px rgba(255,77,109,0);
+	  }
+	  100% {
+		box-shadow: 0 0 0 0 rgba(255,77,109,0);
+	  }
 	}
 
 	/* Mobile adjustments */
@@ -528,7 +573,7 @@
 					   class="button primary launch-btn"
 					   target="_blank"
 					   rel="noopener">
-					  Start Creating Memories
+					  Launch MVP Connect
 					</a>
 
 					<!-- Add to Home Screen Instructions -->
