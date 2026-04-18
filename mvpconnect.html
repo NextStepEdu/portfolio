@@ -351,17 +351,37 @@
 	/* Left / Right navigation (bottom half only) */
 	.tap-zone.left {
 	  left: 0;
-	  bottom: 0;
+	  top: 25%;
 	  width: 50%;
 	  height: 50%;
 	}
 
 	.tap-zone.right {
 	  right: 0;
-	  bottom: 0;
+	  top: 25%;
 	  width: 50%;
 	  height: 50%;
 	}
+	
+	.tap-zone.left::after,
+	.tap-zone.right::after {
+	  content: "";
+	  position: absolute;
+	  top: 50%;
+	  width: 20px;
+	  height: 20px;
+	  background: rgba(255,255,255,0.2);
+	  border-radius: 50%;
+	  transform: translateY(-50%);
+	}
+
+	.tap-zone.left::after {
+	  right: 10px;
+	}
+
+	.tap-zone.right::after {
+	  left: 10px;
+	}	
 
 	/* Top-left long press */
 	.tap-zone.top-left {
@@ -549,7 +569,7 @@
 					</div>	
 					
 					<p style="font-size: 0.8em; opacity: 0.8;">
-					  Tap lower left/right to change photos • Hold top-left to edit
+					  Tap left or right side to change photos • Hold top-left to edit
 					</p>
 
 					<p style="font-size: 0.75em; opacity: 0.6; margin-top: 1em;">
@@ -778,7 +798,7 @@
 			  function startPress() {
 				pressTimer = setTimeout(() => {
 				  showEditor();
-				}, 800); // long press duration
+				}, 2000); // long press duration
 			  }
 
 			  function cancelPress() {
