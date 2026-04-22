@@ -428,6 +428,17 @@
 	</style>	
 	</head>
 	<body class="is-preload">
+		<script>
+		  const correctPassword = "mvp";
+
+		  const entered = prompt("Please enter the password:");
+
+		  if (entered === null || entered !== correctPassword) {
+			alert("Access denied.");
+			window.location.href = "index.html";
+		  }
+		</script>
+		
 		<!-- Wrapper -->
 			<div id="wrapper">
 
