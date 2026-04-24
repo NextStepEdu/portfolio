@@ -41,8 +41,8 @@
 
 		  const entered = prompt("Please enter the password:");
 
-		  if (entered !== correctPassword) {
-			alert("Sorry, access denied.");
+		  if (entered === null || entered !== correctPassword) {
+			alert("Access denied.");
 			window.location.href = "index.html";
 		  }
 		</script>
