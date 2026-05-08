@@ -435,8 +435,36 @@
 	  opacity: 1;
 	}	
 
+	/* IMAGE LIGHTBOX */
+	.image-lightbox {
+	  position: fixed;
+	  inset: 0;
+	  background: rgba(0,0,0,0.9);
+
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+
+	  opacity: 0;
+	  pointer-events: none;
+	  transition: opacity 0.25s ease;
+
+	  z-index: 99999;
+	}
+
+	.image-lightbox.show {
+	  opacity: 1;
+	  pointer-events: auto;
+	}
+
+	.image-lightbox img {
+	  max-width: 90%;
+	  max-height: 90%;
+	  border-radius: 12px;
+	}
+
 	</style>	
-	</head>
+	</head>	
 	<body class="is-preload">
 		<script>
 		  const correctPassword = "mvp";
@@ -696,28 +724,32 @@
 					<div>
 					  <img src="images/iphone-home-screen.png"
 						   alt="Add to Home Screen on iPhone"
-						   style="width: 100%; border-radius: 10px;">
+						   class="expandable-image"
+						   style="width: 100%; border-radius: 10px; cursor: pointer;">
 					  <div style="margin-top: 0.5em; font-size: 0.9em;">iPhone</div>
 					</div>
 
 					<div>
 					  <img src="images/android-home-screen.png"
 						   alt="Add to Home Screen on Android"
-						   style="width: 100%; border-radius: 10px;">
+						   class="expandable-image"
+						   style="width: 100%; border-radius: 10px; cursor: pointer;">
 					  <div style="margin-top: 0.5em; font-size: 0.9em;">Android</div>
 					</div>
 
 					<div>
 					  <img src="images/windows-install.png"
 						   alt="Install MVP Connect on Windows"
-						   style="width: 100%; border-radius: 10px;">
+						   class="expandable-image"
+						   style="width: 100%; border-radius: 10px; cursor: pointer;">
 					  <div style="margin-top: 0.5em; font-size: 0.9em;">Windows</div>
 					</div>
 
 					<div>
 					  <img src="images/mac-install.png"
 						   alt="Install MVP Connect on Mac"
-						   style="width: 100%; border-radius: 10px;">
+						   class="expandable-image"
+						   style="width: 100%; border-radius: 10px; cursor: pointer;">
 					  <div style="margin-top: 0.5em; font-size: 0.9em;">Mac</div>
 					</div>
 
@@ -929,6 +961,28 @@
 				}, 5000);
 			  }
 			</script>
+
+			<script>
+			  const lightbox = document.getElementById("imageLightbox");
+			  const lightboxImage = document.getElementById("lightboxImage");
+
+			  document.querySelectorAll(".expandable-image").forEach(img => {
+				img.addEventListener("click", () => {
+				  lightboxImage.src = img.src;
+				  lightbox.classList.add("show");
+				});
+			  });
+
+			  lightbox.addEventListener("click", () => {
+				lightbox.classList.remove("show");
+			  });
+			</script>
+
+	<!-- IMAGE LIGHTBOX -->
+	<div class="image-lightbox" id="imageLightbox">
+	  <img id="lightboxImage" src="">
+	</div>	
+
 	  
 	</body>
 
