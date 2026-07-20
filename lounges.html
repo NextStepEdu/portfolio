@@ -653,6 +653,11 @@
 				  </div>
 				</footer>
 
+	<!-- IMAGE LIGHTBOX -->
+	<div class="image-lightbox" id="imageLightbox">
+	  <img id="lightboxImage" src="">
+	</div>	
+
 	  <!-- Scripts -->
 	  <script src="assets/js/jquery.min.js"></script>
 	  <script src="assets/js/jquery.scrolly.min.js"></script>
@@ -661,6 +666,129 @@
 	  <script src="assets/js/breakpoints.min.js"></script>
 	  <script src="assets/js/util.js"></script>
 	  <script src="assets/js/main.js"></script>
+	  
+			<script>
+			  // FAQ toggle with animation
+			  document.querySelectorAll('.faq-question').forEach(button => {
+				button.addEventListener('click', () => {
+				  const answer = button.nextElementSibling;
+
+				  document.querySelectorAll('.faq-answer').forEach(a => {
+					if (a !== answer) a.classList.remove('open');
+				  });
+
+				  answer.classList.toggle('open');
+				});
+			  });
+			</script>
+			
+			<script>
+			  const playBtn = document.getElementById("playBtn");
+			  const textBox = document.getElementById("textBox");
+
+			  let audio = new Audio("audio/audio1.mp3");
+
+			  // PLAY AUDIO
+			  playBtn.addEventListener("click", () => {
+				audio.currentTime = 0;
+				audio.play();
+			  });
+
+			  // HOTSPOT CLICK
+			  document.querySelectorAll(".hotspot").forEach(spot => {
+				spot.addEventListener("click", (e) => {
+
+				  // prevent image click conflict
+				  e.stopPropagation();
+
+				  const text = spot.getAttribute("data-text");
+
+				  textBox.textContent = text;
+				  textBox.classList.add("show");
+
+				  // hide after 3 seconds
+				  setTimeout(() => {
+					textBox.classList.remove("show");
+				  }, 3000);
+				});
+			  });
+			</script>
+
+			<script>
+			  const images = [
+				"images/sample1.jpg",
+				"images/sample2.jpg",
+				"images/sample3.jpg"				
+			  ];
+
+			  let currentIndex = 0;
+
+			  const demoImage = document.getElementById("demoImage");
+			  const leftZone = document.querySelector("#controlDemo .left");
+			  const rightZone = document.querySelector("#controlDemo .right");
+
+			  const editorTrigger = document.getElementById("editorTrigger");
+			  const editorOverlay = document.getElementById("editorOverlay");
+
+			  // --- IMAGE NAVIGATION ---
+			  function showImage(index) {
+				demoImage.src = images[index];
+			  }
+
+			  leftZone.addEventListener("click", () => {
+				currentIndex = (currentIndex - 1 + images.length) % images.length;
+				showImage(currentIndex);
+			  });
+
+			  rightZone.addEventListener("click", () => {
+				currentIndex = (currentIndex + 1) % images.length;
+				showImage(currentIndex);
+			  });
+
+			  // --- LONG PRESS (EDITOR MODE) ---
+			  let pressTimer;
+
+			  editorTrigger.addEventListener("mousedown", startPress);
+			  editorTrigger.addEventListener("touchstart", startPress);
+
+			  editorTrigger.addEventListener("mouseup", cancelPress);
+			  editorTrigger.addEventListener("mouseleave", cancelPress);
+			  editorTrigger.addEventListener("touchend", cancelPress);
+
+			  function startPress() {
+				pressTimer = setTimeout(() => {
+				  showEditor();
+				}, 2000); // long press duration
+			  }
+
+			  function cancelPress() {
+				clearTimeout(pressTimer);
+			  }
+
+			  function showEditor() {
+				editorOverlay.classList.add("show");
+
+				setTimeout(() => {
+				  editorOverlay.classList.remove("show");
+				}, 5000);
+			  }
+			</script>
+
+			<script>
+			  const lightbox = document.getElementById("imageLightbox");
+			  const lightboxImage = document.getElementById("lightboxImage");
+
+			  document.querySelectorAll(".expandable-image").forEach(img => {
+				img.addEventListener("click", () => {
+				  lightboxImage.src = img.src;
+				  lightbox.classList.add("show");
+				});
+			  });
+
+			  lightbox.addEventListener("click", () => {
+				lightbox.classList.remove("show");
+			  });
+			</script>	  
 	  
 	</body>
 
