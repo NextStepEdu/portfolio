@@ -37,11 +37,23 @@
 	  color: #ffffff;
 	}
 	
-	.caregiver-button {
-	  padding: 0.75em 1.25em;
-	  font-size: 1em;
-	  min-height: 44px; /* Apple & Android touch guideline */
-	  border-radius: 8px;
+	#transformers-download {
+	  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+	  color: #fff;
+	  border-top: 2px solid #444;
+	  border-bottom: 2px solid #444;
+	}
+
+	#transformers-download h2 {
+	  font-size: 1.5em;
+	  margin-bottom: 0.3em;
+	  text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+	}
+
+	#transformers-download p {
+	  margin-bottom: 1em;
+	  font-size: 0.9em;
+	  color: #e0e0e0;
 	}
 
 	/* Make it easier to tap on small screens */
@@ -51,6 +63,406 @@
 		font-size: 1.1em;
 	  }
 	}	
+	
+	/* FAQ Accordion - Improved */
+	.faq-section {
+	  margin-top: 3em;
+	  padding: 0 1em;
+	  max-width: 800px;
+	  margin-left: auto;
+	  margin-right: auto;
+	}
+
+	.faq-item {
+	  margin-bottom: 1.5em;
+	  word-wrap: break-word;
+	}
+
+	.faq-question {
+	  width: 100%;
+	  background: #f0f0f0;
+	  color: #333;
+	  padding: 1em;
+	  font-size: 0.7em;
+	  border: none;
+	  border-radius: 6px;
+	  text-align: left;
+	  cursor: pointer;
+	  transition: background 0.3s ease;
+	  word-wrap: break-word;
+	  white-space: normal;
+	  line-height: 1.5;
+	}
+
+	.faq-question:hover {
+	  background: #e0e0e0;
+	}
+
+	.faq-answer {
+	  max-height: 0;
+	  overflow: hidden;
+	  opacity: 0;
+	  transition: all 0.4s ease;
+	  padding: 0 1em;
+	  background: #fdfdfd;
+	  border-left: 4px solid #f2849e;
+	  border-radius: 4px;
+	  margin-top: 0.3em;
+	  color: black;
+	  font-size: 0.7em;
+	}
+	.faq-answer.open {
+	  max-height: 500px; /* high enough to fit most answers */
+	  opacity: 1;
+	  padding: 1em;
+	}
+
+	.faq-item {
+	  margin-bottom: 1.5em;
+	  word-wrap: break-word;
+	}
+
+	.faq-question {
+	  width: 100%;
+	  background: #f0f0f0;
+	  color: #333;
+	  padding: 1em;
+	  font-size: 0.7em;
+	  border: none;
+	  border-radius: 6px;
+	  text-align: left;
+	  cursor: pointer;
+	  transition: background 0.3s ease;
+	  word-wrap: break-word;
+	  white-space: normal;
+	  line-height: 1.5;
+	}
+
+	.faq-question:hover {
+	  background: #e0e0e0;
+	}
+
+	.faq-answer {
+	  max-height: 0;
+	  overflow: hidden;
+	  opacity: 0;
+	  transition: all 0.4s ease;
+	  padding: 0 1em;
+	  background: #fdfdfd;
+	  border-left: 4px solid #f2849e;
+	  border-radius: 4px;
+	  margin-top: 0.3em;
+	  color: black;
+	  font-size: 0.7em;
+	}
+	.faq-answer.open {
+	  max-height: 500px; /* high enough to fit most answers */
+	  opacity: 1;
+	  padding: 1em;
+	}	
+
+	.memory-card {
+	  cursor: pointer;
+	  transition: transform 0.2s ease;
+	  text-align: center;
+	}
+
+	.memory-card:hover {
+	  transform: scale(1.05);
+	}
+
+	body.memory-active {
+	  background: rgba(0,0,0,0.85);
+	  transition: background 0.5s ease;
+	}
+	
+	.memory-card:active {
+	  transform: scale(0.95);
+	}	
+	
+	.memory-card img {
+	  cursor: pointer;
+	}	
+
+	.memory-card.playing {
+	  box-shadow: 0 0 20px rgba(255,255,255,0.6);
+	}
+	
+	.memory-demo {
+	  position: relative;
+	  max-width: 500px;
+	  z-index: 0;
+	}
+
+	.memory-demo img {
+	  width: 100%;
+	  border-radius: 12px;
+	  display: block;
+	  position: relative;
+	  z-index: 1;
+	  pointer-events: none;
+	}
+
+	/* Play button (top-right) */
+	.play-button {
+	  position: absolute;
+	  top: 10px;
+	  right: 10px;
+	  background: rgba(0,0,0,0.6);
+	  color: white;
+	  padding: 8px 12px;
+	  border-radius: 8px;
+	  cursor: pointer;
+	  font-size: 1.2em;
+	  z-index: 40;
+	}
+
+	/* Text overlay */
+	.text-overlay {
+	  position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  transform: translate(-50%, -50%);
+
+	  background: rgba(0,0,0,0.75);
+	  color: white;
+	  padding: 12px 16px;
+	  border-radius: 10px;
+
+	  opacity: 0;
+	  transition: opacity 0.3s ease;
+
+	  z-index: 35;
+	  text-align: center;
+	  max-width: 80%;
+	}
+
+	/* When visible */
+	.text-overlay.show {
+	  opacity: 1;
+	}	
+	
+	/* Email / help section */
+	.email-help-section {
+	  margin-top: 3em;
+	  padding: 0 1em;
+	  max-width: 800px;
+	  margin-left: auto;
+	  margin-right: auto;
+	  text-align: center;
+	}	
+	
+	/* HOTSPOT DOT */
+	.hotspot {
+	  position: absolute;
+	  width: 16px;
+	  height: 16px;
+	  background: #ff4d6d;
+	  border-radius: 50%;
+	  cursor: pointer;
+	  z-index: 30;
+	}
+
+	/* subtle pulse */
+	.hotspot::after {
+	  content: "";
+	  position: absolute;
+	  width: 100%;
+	  height: 100%;
+	  border-radius: 50%;
+	  background: rgba(255,77,109,0.4);
+	  animation: pulse 1.5s infinite;
+	}
+
+	@keyframes pulse {
+	  0% { transform: scale(1); opacity: 1; }
+	  100% { transform: scale(2); opacity: 0; }
+	}	
+	
+	.launch-btn {
+	  font-size: 1.2em;
+	  padding: 0.9em 1.8em;
+	  margin-bottom: 2em;
+
+	  background: linear-gradient(135deg, #ff4d6d, #ff7a18);
+	  color: white;
+	  border: none;
+	  border-radius: 12px;
+
+	  font-weight: bold;
+	  letter-spacing: 0.5px;
+
+	  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+	  transition: all 0.25s ease;
+
+	  position: relative;
+	}
+
+	/* Hover (desktop) */
+	.launch-btn:hover {
+	  transform: translateY(-2px) scale(1.03);
+	  box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+	}
+
+	/* Tap (mobile) */
+	.launch-btn:active {
+	  transform: scale(0.97);
+	}
+
+	/* Subtle pulse animation */
+	.launch-btn::after {
+	  content: "";
+	  position: absolute;
+	  inset: 0;
+	  border-radius: 12px;
+	  box-shadow: 0 0 0 rgba(255,77,109,0.6);
+	  animation: pulseBtn 2s infinite;
+	}
+
+	@keyframes pulseBtn {
+	  0% {
+		box-shadow: 0 0 0 0 rgba(255,77,109,0.5);
+	  }
+	  70% {
+		box-shadow: 0 0 0 12px rgba(255,77,109,0);
+	  }
+	  100% {
+		box-shadow: 0 0 0 0 rgba(255,77,109,0);
+	  }
+	}
+
+	/* Mobile adjustments */
+	@media (max-width: 736px) {
+	  .launch-btn {
+		width: 100%;
+		font-size: 1.05em;
+		padding: 0.8em;
+	  }
+	}	
+	
+	.hotspot:active {
+	  transform: scale(1.3);
+	}	
+	
+	#main .inner header {
+	  margin-bottom: 0.5em; /* reduce space below title */
+	}
+
+	#main {
+	  padding-bottom: 0; /* remove extra space under header section */
+	}	
+	
+	/* TAP ZONES */
+	.tap-zone {
+	  position: absolute;
+	  z-index: 25;
+	}
+
+	/* Left / Right navigation (bottom half only) */
+	.tap-zone.left {
+	  left: 0;
+	  top: 25%;
+	  width: 50%;
+	  height: 50%;
+	}
+
+	.tap-zone.right {
+	  right: 0;
+	  top: 25%;
+	  width: 50%;
+	  height: 50%;
+	}
+	
+	.tap-zone.left::after,
+	.tap-zone.right::after {
+	  content: "";
+	  position: absolute;
+	  top: 50%;
+	  width: 20px;
+	  height: 20px;
+	  background: rgba(255,255,255,0.2);
+	  border-radius: 50%;
+	  transform: translateY(-50%);
+	}
+
+	.tap-zone.left::after {
+	  right: 10px;
+	}
+
+	.tap-zone.right::after {
+	  left: 10px;
+	}	
+
+	/* Top-left long press */
+	.tap-zone.top-left {
+	  top: 0;
+	  left: 0;
+	  width: 30%;
+	  height: 30%;
+	}
+
+	/* Optional debug (turn on if needed) */
+	/*
+	.tap-zone { background: rgba(0,255,0,0.1); }
+	*/
+
+	/* EDITOR OVERLAY */
+	.editor-overlay {
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  height: 100%;
+
+	  background: white;
+	  color: black;
+
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+
+	  font-size: 1.5em;
+	  font-weight: bold;
+
+	  opacity: 0;
+	  pointer-events: none;
+
+	  transition: opacity 0.3s ease;
+	  z-index: 50;
+	}
+
+	.editor-overlay.show {
+	  opacity: 1;
+	}	
+
+	/* IMAGE LIGHTBOX */
+	.image-lightbox {
+	  position: fixed;
+	  inset: 0;
+	  background: rgba(0,0,0,0.9);
+
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+
+	  opacity: 0;
+	  pointer-events: none;
+	  transition: opacity 0.25s ease;
+
+	  z-index: 99999;
+	}
+
+	.image-lightbox.show {
+	  opacity: 1;
+	  pointer-events: auto;
+	}
+
+	.image-lightbox img {
+	  max-width: 90%;
+	  max-height: 90%;
+	  border-radius: 12px;
+	}
+	
 	</style>	
 	</head>
 	<body class="is-preload">
@@ -138,27 +550,12 @@
 					">
 
 						<div style="background:rgba(255,255,255,0.06); padding:1.2em; border-radius:12px;">
-							<h3>🧠 Dementia & Memory Care</h3>
-							<p>Create personalised memory books with familiar faces, voices and places to encourage recognition and conversation.</p>
-						</div>
-
-						<div style="background:rgba(255,255,255,0.06); padding:1.2em; border-radius:12px;">
-							<h3>❤️ Caregivers</h3>
-							<p>Support daily routines, reduce anxiety and help loved ones reconnect with important people and memories.</p>
-						</div>
-
-						<div style="background:rgba(255,255,255,0.06); padding:1.2em; border-radius:12px;">
 							<h3>👩‍🏫 Teachers</h3>
 							<p>Create interactive lessons, visual resources, story books and classroom activities with images and audio.</p>
 						</div>
 
 						<div style="background:rgba(255,255,255,0.06); padding:1.2em; border-radius:12px;">
-							<h3>🗣 Speech & Language</h3>
-							<p>Build communication books, vocabulary practice and language-learning resources using familiar images and spoken words.</p>
-						</div>
-
-						<div style="background:rgba(255,255,255,0.06); padding:1.2em; border-radius:12px;">
-							<h3>👨‍👩‍👧 Families</h3>
+							<h3>👨‍👩‍👧 Families and Friends</h3>
 							<p>Capture holidays, family events and special moments so every photo tells its own story.</p>
 						</div>
 
@@ -192,14 +589,6 @@
 						Lounges is designed for use in landscape mode. 
 					  </p>
 
-					<a href="https://loungesweb.netlify.app"
-					   class="button primary"
-					   target="_blank"
-					   rel="noopener"
-					   style="font-size: 1.2em; padding: 0.75em 1.5em; margin-bottom: 2em;">
-					  Launch Lounges
-					</a>
-
 					<!-- Add to Home Screen Instructions -->
 					<div style="margin-top: 2.5em; text-align: left; font-size: 0.95em; background: rgba(255,255,255,0.05); padding: 1.25em; border-radius: 10px;">
 					  <strong>Use Lounges like an app</strong>
@@ -220,6 +609,35 @@
 				  </div>
 				</section>
 			</div>
+
+				<!-- FAQ Section -->
+				<div class="faq-section">
+				  <h2>Frequently Asked Questions</h2>
+				  <div class="faq-item">
+					<button class="faq-question">Who this app for?</button>
+					<div class="faq-answer">Lounges is for teachers, learners, family members, and friends.</div>
+				  </div>
+				  <div class="faq-item">
+					<button class="faq-question">Is the internet required?</button>
+					<div class="faq-answer">You will need an internet connection.</div>
+				  </div>
+				  <div class="faq-item">
+					<button class="faq-question">What devices are supported?</button>
+					<div class="faq-answer">This app works on any device which uses a browser. Use Chrome on MacBooks not Safari.</div>
+				  </div>
+				  <div class="faq-item">
+					<button class="faq-question">How are accounts created?</button>
+					<div class="faq-answer">Contact use by email, and we will create an account.</div>
+				  </div>
+				  <div class="faq-item">
+					<button class="faq-question">Can I trial Lounges?</button>
+					<div class="faq-answer">Yes. You will get five free uses to test and connect wtih others.</div>
+				  </div>				  
+				  <div class="faq-item">
+					<button class="faq-question">How much does it cost?</button>
+					<div class="faq-answer">Contact us for pricing.</div>
+				  </div>
+				</div>
 	  
 				<!-- Footer -->
 				<footer id="footer">
