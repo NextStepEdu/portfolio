@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Phantom by HTML5 UP</title>
+		<title>Lounges – Your Shared Creative Space | Next Step Edu</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -637,7 +637,7 @@
 				  </div>
 				  <div class="faq-item">
 					<button class="faq-question">Can I trial Lounges?</button>
-					<div class="faq-answer">Yes. You will get five free uses to test and connect wtih others.</div>
+					<div class="faq-answer">Yes. You will get five free uses to test and connect with others.</div>
 				  </div>				  
 				  <div class="faq-item">
 					<button class="faq-question">How much does it cost?</button>
@@ -652,7 +652,9 @@
 						<img src="images/footer-logo.png" alt="Footer Logo">
 					</div>
 					<ul class="copyright">
-					  <li>&copy; 2025 Next Step Edu</li>
+					  <li><a href="about.html">About</a></li>
+					  <li><a href="privacy.html">Privacy Policy</a></li>
+					  <li>&copy; 2026 Next Step Edu</li>
 					  <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
 					  <li>All content and applications are &copy; Next Step Edu. All rights reserved.</li>
 					</ul>
@@ -686,98 +688,6 @@
 				  answer.classList.toggle('open');
 				});
 			  });
-			</script>
-			
-			<script>
-			  const playBtn = document.getElementById("playBtn");
-			  const textBox = document.getElementById("textBox");
-
-			  let audio = new Audio("audio/audio1.mp3");
-
-			  // PLAY AUDIO
-			  playBtn.addEventListener("click", () => {
-				audio.currentTime = 0;
-				audio.play();
-			  });
-
-			  // HOTSPOT CLICK
-			  document.querySelectorAll(".hotspot").forEach(spot => {
-				spot.addEventListener("click", (e) => {
-
-				  // prevent image click conflict
-				  e.stopPropagation();
-
-				  const text = spot.getAttribute("data-text");
-
-				  textBox.textContent = text;
-				  textBox.classList.add("show");
-
-				  // hide after 3 seconds
-				  setTimeout(() => {
-					textBox.classList.remove("show");
-				  }, 3000);
-				});
-			  });
-			</script>
-
-			<script>
-			  const images = [
-				"images/sample1.jpg",
-				"images/sample2.jpg",
-				"images/sample3.jpg"				
-			  ];
-
-			  let currentIndex = 0;
-
-			  const demoImage = document.getElementById("demoImage");
-			  const leftZone = document.querySelector("#controlDemo .left");
-			  const rightZone = document.querySelector("#controlDemo .right");
-
-			  const editorTrigger = document.getElementById("editorTrigger");
-			  const editorOverlay = document.getElementById("editorOverlay");
-
-			  // --- IMAGE NAVIGATION ---
-			  function showImage(index) {
-				demoImage.src = images[index];
-			  }
-
-			  leftZone.addEventListener("click", () => {
-				currentIndex = (currentIndex - 1 + images.length) % images.length;
-				showImage(currentIndex);
-			  });
-
-			  rightZone.addEventListener("click", () => {
-				currentIndex = (currentIndex + 1) % images.length;
-				showImage(currentIndex);
-			  });
-
-			  // --- LONG PRESS (EDITOR MODE) ---
-			  let pressTimer;
-
-			  editorTrigger.addEventListener("mousedown", startPress);
-			  editorTrigger.addEventListener("touchstart", startPress);
-
-			  editorTrigger.addEventListener("mouseup", cancelPress);
-			  editorTrigger.addEventListener("mouseleave", cancelPress);
-			  editorTrigger.addEventListener("touchend", cancelPress);
-
-			  function startPress() {
-				pressTimer = setTimeout(() => {
-				  showEditor();
-				}, 2000); // long press duration
-			  }
-
-			  function cancelPress() {
-				clearTimeout(pressTimer);
-			  }
-
-			  function showEditor() {
-				editorOverlay.classList.add("show");
-
-				setTimeout(() => {
-				  editorOverlay.classList.remove("show");
-				}, 5000);
-			  }
 			</script>
 
 			<script>
