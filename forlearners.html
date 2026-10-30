@@ -161,6 +161,53 @@
 	  color: #ffffff;
 	}
 	
+	.tiles article[data-has-info] { cursor: pointer; }
+
+	.info-popup {
+	  position: fixed;
+	  inset: 0;
+	  background: rgba(0,0,0,0.75);
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  padding: 1em;
+	  opacity: 0;
+	  pointer-events: none;
+	  transition: opacity 0.25s ease;
+	  z-index: 100000;
+	}
+	.info-popup.show { opacity: 1; pointer-events: auto; }
+
+	.info-popup-box {
+	  background: #fff;
+	  color: #333;
+	  max-width: 480px;
+	  width: 100%;
+	  max-height: 80vh;
+	  overflow-y: auto;
+	  padding: 1.5em;
+	  border-radius: 12px;
+	  position: relative;
+	  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+	}
+	.info-popup-box h3 { color: #333; text-shadow: none; margin-bottom: 0.6em; }
+	.info-popup-box p  { color: #333; font-size: 0.95em; line-height: 1.6; margin: 0; }
+
+	.info-popup-close {
+	  position: absolute;
+	  top: 8px;
+	  right: 12px;
+	  background: none;
+	  border: none;
+	  box-shadow: none;
+	  color: #333;
+	  font-size: 1.6em;
+	  line-height: 1;
+	  cursor: pointer;
+	  padding: 0;
+	  height: auto;
+	}	
+	
 	</style>	
 	</head>
 	<body class="is-preload">
@@ -245,8 +292,11 @@
 									</span>
 									<a>
 										<h2>Phrasal Verbs</h2>
-										<p>Phrasal verbs are a key part of English and require a unique learning approach. Boost your skills with targeted practice and engaging activities. Access 700 phrasal verbs, 3,500+ example sentences, grammar tips, flashcards, and charts. Reinforce learning through fun tasks like gap fills, conversations, and quizzes.</p>
+										<p>Tap for info</p>
 									</a>
+									<div class="tile-info" hidden>
+										Phrasal verbs are a key part of English and require a unique learning approach. Boost your skills with targeted practice and engaging activities. Access 700 phrasal verbs, 3,500+ example sentences, grammar tips, flashcards, and charts. Reinforce learning through fun tasks like gap fills, conversations, and quizzes.
+									</div>
 								</article>
 								<article class="style3">
 									<span class="image">
@@ -272,8 +322,11 @@
 									</span>
 									<a>
 										<h2>CRAM</h2>
-										<p>Coming Soon - CRAM (Comprehension Reading and Answering Method) is a reading app that helps users improve comprehension through short articles and 10-question quizzes. Questions include main ideas, vocabulary, author’s purpose, and more. With three difficulty levels and hundreds of articles, CRAM is perfect for exam prep or improving reading skills.</p>
+										<p>Coming Soon</p>
 									</a>
+									<div class="tile-info" hidden>
+										CRAM (Comprehension Reading and Answering Method) is a reading app that helps users improve comprehension through short articles and 10-question quizzes. Questions include main ideas, vocabulary, author’s purpose, and more. With three difficulty levels and hundreds of articles, CRAM is perfect for exam prep or improving reading skills.
+									</div>
 								</article>
 							</section>
 						</div>
@@ -294,6 +347,15 @@
 					</ul>
 				  </div>
 				</footer>
+				
+		<!-- INFO POPUP -->
+		<div class="info-popup" id="infoPopup">
+		  <div class="info-popup-box">
+			<button class="info-popup-close" id="infoPopupClose" aria-label="Close">&times;</button>
+			<h3 id="infoPopupTitle"></h3>
+			<p id="infoPopupText"></p>
+		  </div>
+		</div>				
 			  
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
@@ -355,6 +417,32 @@
 
 			});
 			</script>
+			
+			<script>
+			  const popup = document.getElementById("infoPopup");
+			  const popupTitle = document.getElementById("infoPopupTitle");
+			  const popupText = document.getElementById("infoPopupText");
+
+			  document.querySelectorAll(".tiles article").forEach(tile => {
+				const info = tile.querySelector(".tile-info");
+				if (!info) return;
+
+				tile.setAttribute("data-has-info", "");
+
+				tile.addEventListener("click", () => {
+				  const h2 = tile.querySelector("h2");
+				  popupTitle.textContent = (h2 && h2.textContent.trim()) || tile.dataset.title || "";
+				  popupText.textContent = info.textContent.trim();
+				  popup.classList.add("show");
+				});
+			  });
+
+			  function closePopup() { popup.classList.remove("show"); }
+
+			  document.getElementById("infoPopupClose").addEventListener("click", closePopup);
+			  popup.addEventListener("click", e => { if (e.target === popup) closePopup(); });
+			  document.addEventListener("keydown", e => { if (e.key === "Escape") closePopup(); });
+			</script>			
 
 	</body>
 </html>
